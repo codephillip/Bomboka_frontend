@@ -109,3 +109,18 @@ input#first-name-sm.name-input {
   margin-left:1px;
 }
 
+div#trending.row {
+  margin-top:20px;
+}
+
+div#deals.row {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+select.login-select {
+  width:91%;
+  margin-bottom:10px;
+  font-size:20px;
+}
+
