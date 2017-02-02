@@ -1,50 +1,50 @@
 div#login-main-content.row {
-  margin-top:56px;
+    margin-top: 56px;
 }
 
 input.signup-input {
-  width:90%;
-  margin-bottom:10px;
-  padding:0px 7px;
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 0px 7px;
 }
 
 div.col-md-5.signup-block {
-  text-align:center;
+    text-align: center;
 }
 
 img#logo {
 }
 
 h2#signup-block-heading {
-  margin-top:0px;
+    margin-top: 0px;
 }
 
 div#name-row.row {
-  margin-bottom:10px;
-  padding-left:21px;
-  padding-right:23px;
+    margin-bottom: 10px;
+    padding-left: 21px;
+    padding-right: 23px;
 }
 
 input#name-input {
-  width:100%;
+    width: 100%;
 }
 
 input#surname-input {
-  width:100%;
-  margin-right:0px;
+    width: 100%;
+    margin-right: 0px;
 }
 
 .navbar-default {
-  background-color:#5670f7;
-  border-color:#5670f7;
+    background-color: #5670f7;
+    border-color: #5670f7;
 }
 
 nav#main-nav.navbar.navbar-default {
-  background-color:#5670f7;
+    background-color: #5670f7;
 }
 
 .navbar-inverse {
-  background-color:#8f1818;
-  border-color:#080808;
+    background-color: #8f1818;
+    border-color: #080808;
 }
 

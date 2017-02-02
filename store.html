@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bomboka</title>
+
+    <!--Third party js-->
+
+
+    <!--Application style sheets-->
+
+    <script src="https://use.fontawesome.com/295785a9e1.js"></script>
+
+</head>
+<body class="container">
+<nav class="nav nav-inline nav-top" id="navigation">
+    <ul>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i> Bookmark us</li>
+        <li><i class="fa fa-rss" aria-hidden="true"></i> RSS</li>
+        <li><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Report Error</li>
+        <li><i class="fa fa-comment-o" aria-hidden="true"></i> Support</li>
+        <li><i class="fa fa-user-o" aria-hidden="true"></i> Profile</li>
+        <li><i class="fa fa-cog" aria-hidden="true"></i> Settings</li>
+    </ul>
+</nav>
+
+<nav class="navbar navbar-light bg-faded" ng-controller="LoginController">
+    <form class="form-inline col-sm-12" id="login-form" ng-submit="login()">
+        <div class="offset-sm-5 offset-xl-5 offset-lg-5 col-lg-6 col-xl-6 offset-md-5 col-md-6 col-sm-6">
+            <div class="row">
+                <label class="nav-form-label" for="search">Search</label>
+            </div>
+            <div class="row">
+                <input class="form-control nav-form-control col-sm-12" type="text" placeholder="Search" id="search"
+                       ng-model="search">
+            </div>
+        </div>
+        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 nav-login-button">
+            <button class="btn btn-nav" type="submit">Search</button>
+        </div>
+
+    </form>
+</nav>
+<div class="logo">
+    <img src="images/logo.jpg">
+</div>
+
+</body>
+</html>
