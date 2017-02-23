@@ -41,10 +41,12 @@
             console.log(user.sex);
             console.log(user.country);
 
+            //todo compare emails and passwords
+
             return $http({
                 url: 'http://localhost:9000/api/users/signup',
                 method: "POST",
-                data: {'username': user.username, 'password': user.password}
+                data: {'username': user.firstname + user.lastname, 'password': user.password_signup1, 'email': user.email_phone1, 'gender': user.sex, 'country': user.country }
             }).then(function (response) {
                     // success
                     console.log("Successfully signed up");

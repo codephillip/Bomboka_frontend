@@ -17,6 +17,8 @@
 
         function Login(username, password, callback) {
             console.log("Login in authentication");
+            console.log(username);
+            console.log(password);
 
             $http({
                 url: 'http://localhost:9000/api/users/signin',
