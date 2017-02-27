@@ -31,39 +31,15 @@
         }
 
         function Create(user) {
-            // console.log("signing up");
-            // console.log(user.firstname);
-            // console.log(user.lastname);
-            // console.log(user.email_phone1);
-            // console.log(user.email_phone2);
-            // console.log(user.password_signup1);
-            // console.log(user.password_signup2);
-            // console.log(user.sex);
-            // console.log(user.country);
-            //
-            // //todo compare emails and passwords
-            //
-            // return $http({
-            //     url: 'http://localhost:9000/api/users/signup',
-            //     method: "POST",
-            //     data: {'username': user.firstname + user.lastname, 'password': user.password_signup1, 'email': user.email_phone1, 'gender': user.sex, 'country': user.country }
-            // }).then(function (response) {
-            //         // success
-            //         console.log("Successfully signed up");
-            //         $location.path("home");
-            //     },
-            //     function (response) { // optional
-            //         // failed
-            //         console.log("Failed to signed up");
-            //     });
+
         }
 
         function Update(user) {
-            return $http.put('/api/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            //todo
         }
 
         function Delete(id) {
-            return $http.delete('/api/users/' + id).then(handleSuccess, handleError('Error deleting user'));
+            //todo
         }
 
         // private functions
