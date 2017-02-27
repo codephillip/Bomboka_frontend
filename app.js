@@ -7,10 +7,10 @@
     function Router($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
-            .state('home', {
+            .state('products', {
                 url: '/',
-                templateUrl: 'templates/home.html',
-                controller: 'HomeController as homeCtrl'
+                templateUrl: 'templates/products.html',
+                controller: 'ProductsController as prodctrl'
             })
             .state('login', {
                 url: '/login',

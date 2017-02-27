@@ -86,7 +86,8 @@ input#search-store.input-sm {
     /*margin-right:50%;*/
 }
 
-div.thumbnail-desc.caption {
+div.thumbnail-desc {
+    margin-top: 10px;
     text-align:center;
 }
 
