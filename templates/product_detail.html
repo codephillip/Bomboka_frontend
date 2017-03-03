@@ -36,22 +36,24 @@
     </div>
     <div class="row purchase">
         <div class="col-md-1"><img
-                src="assets/img/Relojes-Mujer-2017-Fashion-Women-Girl-Dress-Bracelet-Watch-Quarzt-Clock-Butterfly-Style-Leather-Band-Analog.jpg"
+                ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{pdctrl.data.images[0]}}"
                 width="50" class="preview-images"><img
-                src="assets/img/Relojes-Mujer-2017-Fashion-Women-Girl-Dress-Bracelet-Watch-Quarzt-Clock-Butterfly-Style-Leather-Band-Analog.jpg"
+                ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{pdctrl.data.images[1]}}"
                 width="50" class="preview-images"><img
-                src="assets/img/Relojes-Mujer-2017-Fashion-Women-Girl-Dress-Bracelet-Watch-Quarzt-Clock-Butterfly-Style-Leather-Band-Analog.jpg"
+                ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{pdctrl.data.images[2]}}"
                 width="50" class="preview-images"><img
-                src="assets/img/Relojes-Mujer-2017-Fashion-Women-Girl-Dress-Bracelet-Watch-Quarzt-Clock-Butterfly-Style-Leather-Band-Analog.jpg"
+                ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{pdctrl.data.images[3]}}"
                 width="50" class="preview-images"></div>
         <div
                 class="col-md-5"><img
-                src="assets/img/Relojes-Mujer-2017-Fashion-Women-Girl-Dress-Bracelet-Watch-Quarzt-Clock-Butterfly-Style-Leather-Band-Analog.jpg"
+                ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{pdctrl.data.images[0]}}"
                 width="400"></div>
         <div class="col-md-6">
             <div id="header-div">
-                <h4>Relojes Mujer 2017 Fashion Women Girl Dress Bracelet Watch Quarzt Clock Butterfly Style Leather Band
-                    Analog Quartz Wrist Watch </h4></div>
+                <!--<h4>Relojes Mujer 2017 Fashion Women Girl Dress Bracelet Watch Quarzt Clock Butterfly Style Leather Band-->
+                    <!--Analog Quartz Wrist Watch </h4>-->
+                <h4>{{pdctrl.data.name}}</h4>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="price-details">
@@ -63,7 +65,7 @@
                                 <tbody>
                                 <tr>
                                     <td>Price</td>
-                                    <td>UGX 300,000</td>
+                                    <td>UGX {{pdctrl.data.price}}</td>
                                 </tr>
                                 <tr>
                                     <td>Discount Price</td>
