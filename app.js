@@ -13,9 +13,12 @@
                 controller: 'ProductsController as prodctrl'
             })
             .state('product_detail', {
-                url: '/',
+                url: '/product_detail',
                 templateUrl: 'templates/product_detail.html',
-                controller: 'ProductDetailController as pdctrl'
+                controller: 'ProductDetailController as pdctrl',
+                params: {
+                    productId: null
+                }
             })
             .state('login', {
                 url: '/login',

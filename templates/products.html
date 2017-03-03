@@ -45,14 +45,16 @@
                     <div id="tiles-div">
                         <div class="row">
                             <div class="col-md-4" ng-repeat="prod in prodctrl.data">
-                                <div class="thumbnail">
-                                    <img ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{prod.images[0]}}" width="120" height="50">
-                                    <div class="thumbnail-desc">
-                                        <p class="thumbnail-paragraph">{{prod.name}}</p>
-                                        <p class="thumbnail-paragraph">{{prod.price}}</p>
-                                        <p class="thumbnail-paragraph">5% OFF</p>
+                                <a ui-sref="product_detail({productId: prod._id})">
+                                    <div class="thumbnail" >
+                                        <img ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{prod.images[0]}}" width="120" height="50">
+                                        <div class="thumbnail-desc">
+                                            <p class="thumbnail-paragraph">{{prod.name}}</p>
+                                            <p class="thumbnail-paragraph">{{prod.price}}</p>
+                                            <p class="thumbnail-paragraph">5% OFF</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
 
                         </div>
