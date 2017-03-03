@@ -12,6 +12,11 @@
                 templateUrl: 'templates/products.html',
                 controller: 'ProductsController as prodctrl'
             })
+            .state('product_detail', {
+                url: '/',
+                templateUrl: 'templates/product_detail.html',
+                controller: 'ProductDetailController as pdctrl'
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/login.html',
