@@ -17,7 +17,7 @@
                 templateUrl: 'templates/product_detail.html',
                 controller: 'ProductDetailController as pdctrl',
                 params: {
-                    productId: null
+                    productObject: null
                 }
             })
             .state('login', {
