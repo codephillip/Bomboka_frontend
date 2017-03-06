@@ -20,6 +20,14 @@
                     productObject: null
                 }
             })
+            .state('cart', {
+                url: '/cart',
+                templateUrl: 'templates/cart.html',
+                controller: 'CartController as cartctrl',
+                params: {
+                    userObject: null
+                }
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/login.html',
