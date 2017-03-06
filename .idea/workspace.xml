@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f911a7d8-d5c1-4f19-84a6-5488ddafdefe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/CartController.js" afterPath="$PROJECT_DIR$/controllers/CartController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LoginController.js" afterPath="$PROJECT_DIR$/controllers/LoginController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ProductDetailController.js" afterPath="$PROJECT_DIR$/controllers/ProductDetailController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ProductsController.js" afterPath="$PROJECT_DIR$/controllers/ProductsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/AuthenticationService.js" afterPath="$PROJECT_DIR$/services/AuthenticationService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/ProductService.js" afterPath="$PROJECT_DIR$/services/ProductService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cart.html" afterPath="$PROJECT_DIR$/templates/cart.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product_detail.html" afterPath="$PROJECT_DIR$/templates/product_detail.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -36,28 +28,28 @@
       <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="418">
               <caret line="34" column="76" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductDetailController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductDetailController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/ProductDetailController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="3" column="114" selection-start-line="3" selection-start-column="95" selection-end-line="3" selection-end-column="114" />
+            <state relative-caret-position="308">
+              <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="product_detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/product_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="53" column="74" selection-start-line="53" selection-start-column="74" selection-end-line="53" selection-end-column="74" />
+            <state relative-caret-position="305">
+              <caret line="58" column="71" selection-start-line="58" selection-start-column="71" selection-end-line="58" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -170,10 +162,10 @@
         <option value="$PROJECT_DIR$/services/CartService.js" />
         <option value="$PROJECT_DIR$/controllers/CartController.js" />
         <option value="$PROJECT_DIR$/templates/cart.html" />
-        <option value="$PROJECT_DIR$/templates/product_detail.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/controllers/ProductDetailController.js" />
+        <option value="$PROJECT_DIR$/templates/product_detail.html" />
       </list>
     </option>
   </component>
@@ -184,7 +176,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="2328" />
+    <option name="y" value="792" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
   </component>
@@ -413,15 +405,15 @@
       <workItem from="1488533170428" duration="13855000" />
       <workItem from="1488782902356" duration="13677000" />
       <workItem from="1488804255971" duration="1515000" />
-      <workItem from="1488808939271" duration="4028000" />
+      <workItem from="1488808939271" duration="5778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88062000" />
+    <option name="totallyTimeSpent" value="89812000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="2328" width="1366" height="744" extended-state="6" />
+    <frame x="0" y="792" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23306032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -742,26 +734,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="34" column="76" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/CartController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="53" column="74" selection-start-line="53" selection-start-column="74" selection-end-line="53" selection-end-column="74" />
           <folding />
         </state>
       </provider>
@@ -792,8 +768,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/ProductDetailController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="3" column="114" selection-start-line="3" selection-start-column="95" selection-end-line="3" selection-end-column="114" />
+        <state relative-caret-position="308">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="34" column="76" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="58" column="71" selection-start-line="58" selection-start-column="71" selection-end-line="58" selection-end-column="71" />
           <folding />
         </state>
       </provider>

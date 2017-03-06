@@ -10,21 +10,24 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
 
     pdctrl.addToCart = addToCart;
     function addToCart() {
-        cartProducts = localStorageService.get("cartProducts");
-        if (cartProducts == null) {
-            cartProducts.push(pdctrl.data);
-            localStorageService.set("cartProducts", cartProducts);
-        } else {
-            cartProducts.push(pdctrl.data);
-            localStorageService.set("cartProducts", cartProducts);
-        }
-
-        console.log(localStorageService.get("cartProducts"));
+        var key = "cartProducts" + makeRandom();
+        localStorageService.set(key, pdctrl.data);
+        console.log(localStorageService.keys());
     }
 
-    function cookieExpiryDate(days) {
-        var cookieExp = new Date();
-        cookieExp.setDate(cookieExp.getDate() + days);
-        return cookieExp;
+    pdctrl.removeFromCart = removeFromCart;
+    function removeFromCart(key) {
+        console.log("Remove from cart");
+        localStorageService.remove(key);
     }
+
+    function makeRandom() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
+    }
+
+
 }
