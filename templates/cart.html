@@ -16,24 +16,33 @@
         </ul>
         <ul class="cart-header">
             <div class="close1"></div>
-            <li class="ring-in"><a href="single.html"><img src="assets/img/laptop.jpeg" class="img-responsive" alt=""></a>
-            </li>
-            <li><span class="name">Analog Watches {{cartctrl.name}}</span></li>
-            <li><span class="cost">UGX {{cartctrl.price}}</span></li>
-            <li>
-                <select class="login-select" ng-model="cartctrl.quantity" onselect="">
-                    <optgroup label="Quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                    </optgroup>
-                </select>
-                <button class="btn btn-danger add-to-cart-btn" type="submit">Delete</button>
-            </li>
+            <div >
+                <ul ng-repeat="product in cartctrl.cartProducts">
+                    <li class="ring-in"><a href="single.html"><img src="assets/img/laptop.jpeg" class="img-responsive"
+                                                                   alt=""></a>
+                    </li>
+                    <li><span class="name">Analog Watches {{product.name}}</span></li>
+                    <li><span class="cost">UGX {{product.price}}</span></li>
+                    <li>
+                        <select class="login-select" onselect="">
+                            <optgroup label="Quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </optgroup>
+                        </select>
+                        <button class="btn btn-danger add-to-cart-btn" type="submit">Delete</button>
+                    </li>
+                </ul>
+
+
+            </div>
+
+
             <div class="clearfix"></div>
         </ul>
     </div>

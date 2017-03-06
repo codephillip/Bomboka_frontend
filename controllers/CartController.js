@@ -1,28 +1,32 @@
-angular.module('bomboka')
-    .controller('CartController', CartController);
+(function () {
+    'use strict';
 
-CartController.$inject = ['CartService', '$location', '$cookies'];
-function CartController(CartService, $location, $cookies) {
-    var cartctrl = this;
+    angular.module('bomboka')
+        .controller('CartController', CartController);
 
-    // cartctrl.data = $stateParams.userObject;
+    CartController.$inject = ['CartService', '$location', '$cookies', 'localStorageService'];
+    function CartController(CartService, $location, $cookies, localStorageService) {
+        var cartctrl = this;
 
-    var userCookie = $cookies.getObject('globals').currentUser;
-    // console.log("Logged in user: " + $rootScope.globals.currentUser);
-    console.log("Logged in user: " + userCookie.username);
-    console.log("Logged in user: " + userCookie.userkey);
-
-    CartService.GetAll(userCookie.userkey)
-        .then(
-            function success(response) {
-                console.log("Cart items in user");
-                console.log(response.data);
-                cartctrl.data = response.data;
-            },
-            function failure(error) {
-                console.log("Failed to get Cart items");
+        var keys = localStorageService.keys();
+        cartctrl.cartProducts = [];
+        for (var i = 0; i <= keys.length; i++) {
+            try {
+                console.log("Before check" + keys[i]);
+                if (keys[i].includes('cartProducts') && localStorageService.get(keys[i]) != null) {
+                    console.log("contains" + keys[i]);
+                    console.log(localStorageService.get(keys[i]));
+                    cartctrl.cartProducts.push(localStorageService.get(keys[i]))
+                }
+            } catch (err) {
+                console.log(err.toString());
             }
-        );
+        }
+
+        console.log("cartproducts#");
+        console.log(cartctrl.cartProducts);
+    }
 
 
-}
+
+})();
