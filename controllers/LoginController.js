@@ -18,7 +18,9 @@ function LoginController(UserService, $location, AuthenticationService, FlashSer
         vm.dataLoading = true;
         AuthenticationService.Login(vm.username, vm.password, function (response) {
             console.log("callback");
-            AuthenticationService.SetCredentials(vm.username, vm.password);
+            console.log(response.data);
+            console.log(response.data._id.toString);
+            AuthenticationService.SetCredentials(vm.username, vm.password, response.data._id.toString);
             $location.path('home');
         });
     }

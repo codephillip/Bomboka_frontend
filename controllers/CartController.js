@@ -9,19 +9,9 @@ function CartController($location, $stateParams, $rootScope, $cookies) {
 
     // cartctrl.data = $stateParams.userObject;
 
-    var cookieObject =  $cookies.getObject('globals');
-    cartctrl.user = $rootScope.globals;
+    var userCookie =  $cookies.getObject('globals').currentUser;
     // console.log("Logged in user: " + $rootScope.globals.currentUser);
-    console.log("Logged in user: " + cookieObject);
-
-    // Setting a cookie
-    var cookieExp = new Date();
-    cookieExp.setDate(cookieExp.getDate() + 7);
-    $cookies.put('myFavorite', 'oatmeal',  { expires: cookieExp });
-
-    var favoriteCookie = $cookies.get('myFavorite');
-    console.log("Test cookies " + favoriteCookie);
-
+    console.log("Logged in user: " + userCookie.username);
 
 
 }
