@@ -16,9 +16,9 @@
         </ul>
         <ul class="cart-header">
             <div class="close1"></div>
-            <div >
+            <div>
                 <ul ng-repeat="product in cartctrl.cartProducts">
-                    <li class="ring-in"><a href="single.html"><img src="assets/img/laptop.jpeg" class="img-responsive"
+                    <li class="ring-in"><a href="single.html"><img ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{product.images[0]}}" class="img-responsive"
                                                                    alt=""></a>
                     </li>
                     <li><span class="name">Analog Watches {{product.name}}</span></li>
@@ -35,13 +35,12 @@
                                 <option value="7">7</option>
                             </optgroup>
                         </select>
-                        <button class="btn btn-danger add-to-cart-btn" type="submit">Delete</button>
+                        <button class="btn btn-danger add-to-cart-btn"
+                                ng-click="cartctrl.removeFromCart(cartctrl.cartProductKeys[$index])">Delete
+                        </button>
                     </li>
                 </ul>
-
-
             </div>
-
 
             <div class="clearfix"></div>
         </ul>

@@ -15,12 +15,6 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
         console.log(localStorageService.keys());
     }
 
-    pdctrl.removeFromCart = removeFromCart;
-    function removeFromCart(key) {
-        console.log("Remove from cart");
-        localStorageService.remove(key);
-    }
-
     function makeRandom() {
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
