@@ -1,8 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('bomboka', ['ui.router', 'ngCookies'])
-        .config(Router);
+    angular.module('bomboka', ['ui.router', 'ngCookies', 'LocalStorageModule'])
+        .config(Router, function (localStorageServiceProvider) {
+            localStorageServiceProvider
+                .setPrefix('bomboka');
+        });
 
     function Router($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');

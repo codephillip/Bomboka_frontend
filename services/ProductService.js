@@ -9,11 +9,16 @@
     function ProductService($http, $location) {
         var service = {};
         service.GetAll = GetAll;
+        service.GetByShop = GetByShop;
         service.GetById = GetById;
         service.Search = Search;
         return service;
 
-        function GetAll(shopId) {
+        function GetAll() {
+            return $http.get('http://127.0.0.1:9000/api/shop/all/products');
+        }
+
+        function GetByShop(shopId) {
             return $http.get('http://127.0.0.1:9000/api/shop/products/' + shopId);
         }
 

@@ -6,7 +6,7 @@ function ProductsController(ProductService) {
     var prodctrl = this;
 
     //todo extract shop_id and pass it to this method
-    prodctrl.data = ProductService.GetAll('58b3f359e885f00be2dd87c3')
+    prodctrl.data = ProductService.GetAll()
         .then(function success(response) {
             console.log(response.data);
             prodctrl.data = response.data;
