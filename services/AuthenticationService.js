@@ -20,26 +20,14 @@
             console.log(username);
             console.log(password);
 
-            $http({
-                url: 'http://localhost:9000/api/users/signin',
-                method: "POST",
-                data: {'username': username, 'password': password}
-            })
-                .then(function (response) {
-                        // success
-                        console.log("Successfully logged in etc");
-                        console.log("TEST",$location.toString());
-
-                        $location.path("home");
-                    },
-                    function (response) { // optional
-                        // failed
-                        console.log("Failed to log in");
-                    });
-
+            $http.post('http://localhost:9000/api/users/signin', {username: username, password: password})
+                .then(function success(response) {
+                    callback(response);
+                });
         }
 
         function SetCredentials(username, password) {
+            console.log("Setcredentials");
             var authdata = Base64.encode(username + ':' + password);
 
             $rootScope.globals = {
@@ -53,9 +41,11 @@
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
             // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
+            console.log("Saving cookie" + $rootScope.globals);
             var cookieExp = new Date();
             cookieExp.setDate(cookieExp.getDate() + 7);
-            $cookies.putObject('globals', $rootScope.globals, { expires: cookieExp });
+            $cookies.putObject('globals', $rootScope.globals, {expires: cookieExp});
+            console.log("User cookie data" + $cookies.getObject('globals').currentUser.username);
         }
 
         function ClearCredentials() {
