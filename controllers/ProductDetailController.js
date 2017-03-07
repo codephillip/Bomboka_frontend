@@ -13,13 +13,8 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
 
     toggleAddToCartButton();
     function toggleAddToCartButton() {
-        console.log("toggleAddToCartButton started");
-        console.log("toggleAddToCartButton " + pdctrl.isVisible);
         var keys = localStorageService.keys();
         for (var i = 0; i <= keys.length; i++) {
-            console.log("toggleAddToCartButton checking");
-            console.log(localStorageService.get(keys[i]));
-            console.log(pdctrl.data);
             try {
                 if (pdctrl.data.key == localStorageService.get(keys[i]).key) {
                     pdctrl.isVisible = false;
@@ -34,15 +29,12 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
 
     pdctrl.addToCart = addToCart;
     function addToCart() {
-        console.log("addtocart");
         var key = "cartProducts" + makeRandom();
         var newValue = pdctrl.data;
         newValue['cartkey'] = key;
         //give product default quantity of 1
         newValue['quantity'] = 1;
-        console.log(newValue);
         localStorageService.set(key, newValue);
-        console.log(localStorageService.keys());
         pdctrl.isVisible = false;
     }
 

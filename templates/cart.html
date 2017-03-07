@@ -25,24 +25,24 @@
                     </li>
                     <li><span class="name">{{product.name}}</span></li>
                     <li><span class="cost">Unit cost: UGX {{product.price}}</span></li>
-                    <li><span class="price">Subtotal: UGX {{cartctrl.getSubtotal(product.price , product.key, cartctrl.grandtotal) }}</span></li>
+                    <li><span class="price">Subtotal: UGX {{cartctrl.getSubtotalAndUpdateCartProduct(product, product.quantity) }}</span></li>
                     <li>
                         <!--ng-model uses product.key to prevent it from binding to all products-->
 
                         <span>Quantity</span>
                         <select
-                                ng-init="product.key = cartctrl.quantity[0].id"
-                                ng-model="product.key"
-                                ng-options="choice.id as choice.name for choice in cartctrl.quantity">
+                                ng-init="product.quantity"
+                                ng-model="product.quantity"
+                                ng-options="choice.id as choice.name for choice in cartctrl.quantityChoices">
                         </select>
-                        <p>{{product.key}}</p>
+                        <p>{{product.quantity}}</p>
                         <button class="btn btn-danger add-to-cart-btn"
                                 ng-click="cartctrl.removeFromCart(product.cartkey)">Delete
                         </button>
                     </li>
                 </ul>
 
-                <p>GRAND TOTAL: UGX {{cartctrl.grandtotal}}</p>
+                <p>GRAND TOTAL: UGX {{cartctrl.getGrandtotal()}}</p>
             </div>
 
             <div class="clearfix"></div>
