@@ -6,13 +6,36 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
     var pdctrl = this;
 
     pdctrl.data = $stateParams.productObject;
-    var cartProducts = [];
+    pdctrl.isVisible = true;
+
+    toggleAddToCartButton();
+
+    function toggleAddToCartButton() {
+        console.log("toggleAddToCartButton started");
+        console.log("toggleAddToCartButton " + pdctrl.isVisible);
+        var keys = localStorageService.keys();
+        for (var i = 0; i <= keys.length; i++) {
+            console.log("toggleAddToCartButton checking");
+            console.log(localStorageService.get(keys[i]));
+            console.log(pdctrl.data);
+            try {
+                if (pdctrl.data.key == localStorageService.get(keys[i]).key) {
+                    pdctrl.isVisible = false;
+                    console.log("toggleAddToCartButton found#" + pdctrl.isVisible);
+                }
+            } catch (err) {
+                console.log(err.toString());
+            }
+        }
+    }
+
 
     pdctrl.addToCart = addToCart;
     function addToCart() {
         var key = "cartProducts" + makeRandom();
         localStorageService.set(key, pdctrl.data);
         console.log(localStorageService.keys());
+        pdctrl.isVisible = false;
     }
 
     function makeRandom() {
