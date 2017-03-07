@@ -18,28 +18,31 @@
             <div class="close1"></div>
             <div>
                 <ul ng-repeat="product in cartctrl.cartProducts">
-                    <li class="ring-in"><a href="single.html"><img ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{product.images[0]}}" class="img-responsive"
-                                                                   alt=""></a>
+                    <li class="ring-in"><a href="single.html"><img
+                            ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{product.images[0]}}"
+                            class="img-responsive"
+                            alt=""></a>
                     </li>
                     <li><span class="name">Analog Watches {{product.name}}</span></li>
-                    <li><span class="cost">UGX {{product.price}}</span></li>
+                    <li><span class="cost">Unit cost: UGX {{product.price}}</span></li>
+                    <li><span class="price">Subtotal: UGX {{cartctrl.getSubtotal(product.price , product.key, cartctrl.grandtotal) }}</span></li>
                     <li>
-                        <select class="login-select" onselect="">
-                            <optgroup label="Quantity">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                            </optgroup>
+                        <!--ng-model uses product.key to prevent it from binding to all products-->
+
+                        <span>Quantity</span>
+                        <select
+                                ng-init="product.key = cartctrl.quantity[0].id"
+                                ng-model="product.key"
+                                ng-options="choice.id as choice.name for choice in cartctrl.quantity">
                         </select>
+                        <p>{{product.key}}</p>
                         <button class="btn btn-danger add-to-cart-btn"
                                 ng-click="cartctrl.removeFromCart(cartctrl.cartProductKeys[$index])">Delete
                         </button>
                     </li>
                 </ul>
+
+                <p>GRAND TOTAL: UGX {{cartctrl.grandtotal}}</p>
             </div>
 
             <div class="clearfix"></div>
