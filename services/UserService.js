@@ -9,6 +9,7 @@
     function UserService($http, $location) {
         var service = {};
         service.Create = Create;
+        service.getById = getById;
         return service;
 
         function Create(user) {
@@ -37,6 +38,10 @@
                     // failed
                     console.log("Failed to signed up");
                 });
+        }
+
+        function getById(userId) {
+            return $http.get('http://localhost:9000/api/user/' + userId);
         }
     }
 

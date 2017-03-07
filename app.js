@@ -26,10 +26,12 @@
             .state('cart', {
                 url: '/cart',
                 templateUrl: 'templates/cart.html',
-                controller: 'CartController as cartctrl',
-                params: {
-                    userObject: null
-                }
+                controller: 'CartController as cartctrl'
+            })
+            .state('user_profile', {
+                url: '/user_profile',
+                templateUrl: 'templates/user_profile.html',
+                controller: 'UserProfileController as userctrl'
             })
             .state('login', {
                 url: '/login',

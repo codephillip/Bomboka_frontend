@@ -5,8 +5,8 @@
         .module('bomboka')
         .factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$cookies', '$rootScope', '$timeout', 'UserService', '$location'];
-    function AuthenticationService($http, $cookies, $rootScope, $timeout, UserService, $location) {
+    AuthenticationService.$inject = ['$http', '$cookies', '$rootScope', '$timeout', 'UserService', '$location', 'localStorageService'];
+    function AuthenticationService($http, $cookies, $rootScope, $timeout, UserService, $location, localStorageService) {
         var service = {};
 
         service.Login = Login;
@@ -26,16 +26,16 @@
                 });
         }
 
-        function SetCredentials(username, password, userkey) {
+        function SetCredentials(username, password, userObject) {
             console.log("Setcredentials");
-            console.log("Setcredentials" + userkey);
+            console.log(userObject);
             var authdata = Base64.encode(username + ':' + password);
 
             $rootScope.globals = {
                 currentUser: {
                     username: username,
                     authdata: authdata,
-                    userkey: userkey
+                    userkey: userObject.key
                 }
             };
 
@@ -47,6 +47,7 @@
             var cookieExp = new Date();
             cookieExp.setDate(cookieExp.getDate() + 7);
             $cookies.putObject('globals', $rootScope.globals, {expires: cookieExp});
+            localStorageService.set('userObject', userObject);
             console.log("User cookie data" + $cookies.getObject('globals').currentUser.username);
         }
 
