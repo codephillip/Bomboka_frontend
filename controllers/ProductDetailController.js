@@ -8,8 +8,10 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
     pdctrl.data = $stateParams.productObject;
     pdctrl.isVisible = true;
 
-    toggleAddToCartButton();
+    //todo remove on release
+    // localStorageService.clearAll();
 
+    toggleAddToCartButton();
     function toggleAddToCartButton() {
         console.log("toggleAddToCartButton started");
         console.log("toggleAddToCartButton " + pdctrl.isVisible);
@@ -32,8 +34,14 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
 
     pdctrl.addToCart = addToCart;
     function addToCart() {
+        console.log("addtocart");
         var key = "cartProducts" + makeRandom();
-        localStorageService.set(key, pdctrl.data);
+        var newValue = pdctrl.data;
+        newValue['cartkey'] = key;
+        //give product default quantity of 1
+        newValue['quantity'] = 1;
+        console.log(newValue);
+        localStorageService.set(key, newValue);
         console.log(localStorageService.keys());
         pdctrl.isVisible = false;
     }

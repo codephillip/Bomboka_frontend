@@ -24,17 +24,17 @@
         function loadCartItems() {
             var keys = localStorageService.keys();
             cartctrl.cartProducts = [];
-            cartctrl.cartProductKeys = [];
             for (var i = 0; i <= keys.length; i++) {
                 try {
                     if (keys[i].includes('cartProducts') && localStorageService.get(keys[i]) != null) {
                         cartctrl.cartProducts.push(localStorageService.get(keys[i]));
-                        cartctrl.cartProductKeys.push(keys[i])
                     }
                 } catch (err) {
                     console.log(err.toString());
                 }
             }
+            console.log("cartItems#");
+            console.log(cartctrl.cartProducts);
         }
 
         function removeFromCart(key) {

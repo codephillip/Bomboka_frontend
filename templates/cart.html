@@ -23,7 +23,7 @@
                             class="img-responsive"
                             alt=""></a>
                     </li>
-                    <li><span class="name">Analog Watches {{product.name}}</span></li>
+                    <li><span class="name">{{product.name}}</span></li>
                     <li><span class="cost">Unit cost: UGX {{product.price}}</span></li>
                     <li><span class="price">Subtotal: UGX {{cartctrl.getSubtotal(product.price , product.key, cartctrl.grandtotal) }}</span></li>
                     <li>
@@ -37,7 +37,7 @@
                         </select>
                         <p>{{product.key}}</p>
                         <button class="btn btn-danger add-to-cart-btn"
-                                ng-click="cartctrl.removeFromCart(cartctrl.cartProductKeys[$index])">Delete
+                                ng-click="cartctrl.removeFromCart(product.cartkey)">Delete
                         </button>
                     </li>
                 </ul>
