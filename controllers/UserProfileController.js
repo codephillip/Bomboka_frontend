@@ -10,22 +10,18 @@
         var userctrl = this;
 
         var oldUserObject = localStorageService.get('userObject');
-        console.log("Loading...");
-        console.log(oldUserObject);
 
         UserService.getById(oldUserObject.key)
             .then(
                 function success(response) {
-                    console.log("Successfully got user data");
-                    console.log(response.data);
                     userctrl.data = response.data;
+                    //using $scope sends data to the header-directive
+                    $scope.data = response.data;
                 },
                 function failure(error) {
                     console.log("Failed to get user data");
                 }
             );
-        console.log("userprofile");
-        console.log(userctrl.data);
 
         $scope.uploadFiles = function (file, errFiles, userKey) {
             $scope.f = file;
@@ -38,8 +34,10 @@
 
                 file.upload.then(function (response) {
                     $timeout(function () {
-                        file.result = response.data;
                         userctrl.data = response.data;
+                        $scope.data = response.data;
+                        localStorageService.set('userObject', response.data);
+
                     });
                 }, function (response) {
                     if (response.status > 0)
@@ -50,7 +48,5 @@
                 });
             }
         }
-
     }
-
 })();

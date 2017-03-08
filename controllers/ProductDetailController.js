@@ -18,7 +18,6 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
             try {
                 if (pdctrl.data.key == localStorageService.get(keys[i]).key) {
                     pdctrl.isVisible = false;
-                    console.log("toggleAddToCartButton found#" + pdctrl.isVisible);
                 }
             } catch (err) {
                 console.log(err.toString());

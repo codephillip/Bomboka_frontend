@@ -10,7 +10,6 @@
         cartctrl.removeFromCart = removeFromCart;
         cartctrl.getSubtotalAndUpdateCartProduct = getSubtotalAndUpdateCartProduct;
         cartctrl.getGrandtotal = getGrandtotal;
-        cartctrl.grandtotal = 0;
         cartctrl.quantityChoices = [
             {id: '1', name: 1},
             {id: '2', name: 2},
