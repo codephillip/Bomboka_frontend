@@ -9,9 +9,12 @@
     function UserProfileController(localStorageService, UserService, $scope, Upload, $timeout) {
         var userctrl = this;
 
-        var oldUserObject = localStorageService.get('userObject');
+        userctrl.updateProfile = updateProfile;
 
-        UserService.getById(oldUserObject.key)
+        var userObject = localStorageService.get('userObject');
+        console.log(userObject);
+
+        UserService.getById(userObject.key)
             .then(
                 function success(response) {
                     userctrl.data = response.data;
@@ -46,6 +49,18 @@
                         evt.loaded / evt.total));
                 });
             }
+        };
+
+        function updateProfile() {
+            UserService.updateInfo(userctrl.data).then(
+                function (response) {
+                    console.log("Successfully updated profile");
+                    localStorageService.set('userObject', response.data);
+                },
+                function (error) {
+                    console.log("Failed to update profile");
+                }
+            )
         }
     }
 })();

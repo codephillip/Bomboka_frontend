@@ -11,21 +11,13 @@
         service.Create = Create;
         service.getById = getById;
         service.sendImage = sendImage;
+        service.updateInfo = updateInfo;
+
         return service;
 
         function Create(user) {
             console.log("signing up");
-            console.log(user.firstname);
-            console.log(user.lastname);
-            console.log(user.email_phone1);
-            console.log(user.email_phone2);
-            console.log(user.password_signup1);
-            console.log(user.password_signup2);
-            console.log(user.sex);
-            console.log(user.country);
-
             //todo compare emails and passwords
-
             return $http({
                 url: 'http://localhost:9000/api/users/signup',
                 method: "POST",
@@ -53,6 +45,19 @@
 
         function sendImage(userId, data) {
             return $http.post('http://localhost:9000/api/user/addimage/' + userId, {'image1' : data }, { headers: {'Content-Type': 'multipart/form-data'} });
+        }
+
+        function updateInfo(user) {
+            var userObject = {
+                'fullnames':user.fullnames,
+                'username':user.username,
+                'password': user.password_signup1,
+                'email': user.email,
+                'phoneNumber': user.phoneNumber,
+                'dob': user.dob,
+                'address': user.address
+            };
+            return $http.post('http://localhost:9000/api/users/edit/' + user.key, userObject);
         }
     }
 

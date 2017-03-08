@@ -27,11 +27,12 @@
                  alt="Profile Image" type="file" ngf-select="uploadFiles($file, $invalidFiles, userctrl.data.key)"
                  accept="image/*" ngf-max-height="1000" ngf-max-size="5MB">
         </a>
+        <br><br>
         <p>Username: {{userctrl.data.username}}</p>
         <p>Fullname: {{userctrl.data.fullnames}}</p>
         <p>Email: {{userctrl.data.email}}</p>
         <p>PhoneNumber: {{userctrl.data.phoneNumber}}</p>
         <p>Address: {{userctrl.data.address}}</p>
-        <button ui-sref="#!/update_user_data" class="btn btn-danger">Update Information</button>
+        <a href="#!/user_profile_edit" class="btn btn-danger">Update Information</a>
     </div>
 </div>

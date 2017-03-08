@@ -33,6 +33,11 @@
                 templateUrl: 'templates/user_profile.html',
                 controller: 'UserProfileController as userctrl'
             })
+            .state('user_profile_edit', {
+                url: '/user_profile_edit',
+                templateUrl: 'templates/user_profile_edit.html',
+                controller: 'UserProfileController as userctrl'
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/login.html',

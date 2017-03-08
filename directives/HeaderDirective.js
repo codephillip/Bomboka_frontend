@@ -10,7 +10,7 @@ function HeaderDirective() {
         bindToController: true
     };
 
-    HeaderController.$inject = ['localStorageService', 'UserService'];
+    HeaderController.$inject = ['localStorageService'];
     function HeaderController(localStorageService) {
         var headctrl = this;
         headctrl.data = localStorageService.get('userObject');
