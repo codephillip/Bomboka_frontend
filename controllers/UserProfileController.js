@@ -37,7 +37,6 @@
                         userctrl.data = response.data;
                         $scope.data = response.data;
                         localStorageService.set('userObject', response.data);
-
                     });
                 }, function (response) {
                     if (response.status > 0)
