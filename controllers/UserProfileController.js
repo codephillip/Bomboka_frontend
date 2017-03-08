@@ -27,18 +27,19 @@
         console.log("userprofile");
         console.log(userctrl.data);
 
-        $scope.uploadFiles = function (file, errFiles) {
+        $scope.uploadFiles = function (file, errFiles, userKey) {
             $scope.f = file;
             $scope.errFile = errFiles && errFiles[0];
             if (file) {
                 file.upload = Upload.upload({
-                    url: 'http://localhost:9000/api/user/addimage/58bd4e93e885f018bd8ff200',
+                    url: 'http://localhost:9000/api/user/addimage/' + userKey,
                     data: {image1: file}
                 });
 
                 file.upload.then(function (response) {
                     $timeout(function () {
                         file.result = response.data;
+                        userctrl.data = response.data;
                     });
                 }, function (response) {
                     if (response.status > 0)
