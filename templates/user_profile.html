@@ -4,11 +4,25 @@
     <div style="margin: 100px">
         <img ng-src="http://127.0.0.1:9000/fetch_image_file/profile_image/{{userctrl.data.key}}/{{userctrl.data.image}}"
              alt="Profile Image">
-        <button ng-click="userctrl.updateImage()"
-                class="btn btn-danger btn-upload" upload-button
-                url="/upload"
-                on-success="onSuccess(response)">Change Image
-        </button>
+
+        <div>
+            <h4>Upload on file select</h4>
+            <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                    accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+                Select File</button>
+            <br><br>
+            File:
+            <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+                <span class="progress" ng-show="f.progress >= 0">
+          <div style="width:{{f.progress}}%"
+               ng-bind="f.progress + '%'"></div>
+      </span>
+            </div>
+            {{errorMsg}}
+
+        </div>
+
+
         <p>Username: {{userctrl.data.username}}</p>
         <p>Fullname: {{userctrl.data.fullnames}}</p>
         <p>Email: {{userctrl.data.email}}</p>

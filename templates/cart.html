@@ -35,7 +35,6 @@
                                 ng-model="product.quantity"
                                 ng-options="choice.id as choice.name for choice in cartctrl.quantityChoices">
                         </select>
-                        <p>{{product.quantity}}</p>
                         <button class="btn btn-danger add-to-cart-btn"
                                 ng-click="cartctrl.removeFromCart(product.cartkey)">Delete
                         </button>

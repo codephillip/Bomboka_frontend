@@ -10,6 +10,7 @@
         var service = {};
         service.Create = Create;
         service.getById = getById;
+        service.sendImage = sendImage;
         return service;
 
         function Create(user) {
@@ -28,7 +29,13 @@
             return $http({
                 url: 'http://localhost:9000/api/users/signup',
                 method: "POST",
-                data: {'username': user.firstname + user.lastname, 'password': user.password_signup1, 'email': user.email_phone1, 'gender': user.sex, 'country': user.country }
+                data: {
+                    'username': user.firstname + user.lastname,
+                    'password': user.password_signup1,
+                    'email': user.email_phone1,
+                    'gender': user.sex,
+                    'country': user.country
+                }
             }).then(function (response) {
                     // success
                     console.log("Successfully signed up");
@@ -42,6 +49,10 @@
 
         function getById(userId) {
             return $http.get('http://localhost:9000/api/user/' + userId);
+        }
+
+        function sendImage(userId, data) {
+            return $http.post('http://localhost:9000/api/user/addimage/' + userId, {'image1' : data }, { headers: {'Content-Type': 'multipart/form-data'} });
         }
     }
 

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('bomboka', ['ui.router', 'ngCookies', 'LocalStorageModule'])
+    angular.module('bomboka', ['ui.router', 'ngCookies', 'LocalStorageModule', 'ngFileUpload'])
         .config(Router, function (localStorageServiceProvider) {
             localStorageServiceProvider
                 .setPrefix('bomboka');
