@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f911a7d8-d5c1-4f19-84a6-5488ddafdefe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/angular-date-picker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/angular-date-picker/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/angular-date-picker/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/angular-date-picker/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/angular-date-picker/angular-date-picker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/angular-date-picker/angular-date-picker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/angular-date-picker/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/angular-date-picker/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UserProfileController.js" afterPath="$PROJECT_DIR$/controllers/UserProfileController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/HeaderDirective.js" afterPath="$PROJECT_DIR$/directives/HeaderDirective.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/UserService.js" afterPath="$PROJECT_DIR$/services/UserService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_profile.html" afterPath="$PROJECT_DIR$/templates/user_profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_profile_edit.html" afterPath="$PROJECT_DIR$/templates/user_profile_edit.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,21 +36,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserProfileController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserProfileController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/UserProfileController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
+            <state relative-caret-position="1254">
               <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/CartService.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="501">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,18 +59,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="123" column="14" selection-start-line="82" selection-start-column="7" selection-end-line="123" selection-end-column="14" />
+            <state relative-caret-position="66">
+              <caret line="3" column="110" selection-start-line="3" selection-start-column="110" selection-end-line="3" selection-end-column="110" />
               <folding />
             </state>
           </provider>
@@ -71,28 +69,28 @@
       <file leaf-file-name="user_profile_edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_profile_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+            <state relative-caret-position="299">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/angular-date-picker/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/UserService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CartController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/CartController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="220">
+              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -101,8 +99,8 @@
       <file leaf-file-name="user_profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user_profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="387">
+              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -163,19 +161,19 @@
         <option value="$PROJECT_DIR$/services/AuthenticationService.js" />
         <option value="$PROJECT_DIR$/templates/cart.html" />
         <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/css/styles.css" />
         <option value="$PROJECT_DIR$/controllers/CartController.js" />
         <option value="$PROJECT_DIR$/controllers/LoginController.js" />
         <option value="$PROJECT_DIR$/controllers/ProductDetailController.js" />
         <option value="$PROJECT_DIR$/controllers/ProductsController.js" />
         <option value="$PROJECT_DIR$/templates/header.html" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/templates/user_profile.html" />
         <option value="$PROJECT_DIR$/directives/HeaderDirective.js" />
+        <option value="$PROJECT_DIR$/controllers/UserProfileController.js" />
+        <option value="$PROJECT_DIR$/templates/user_profile.html" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/templates/user_profile_edit.html" />
         <option value="$PROJECT_DIR$/services/UserService.js" />
-        <option value="$PROJECT_DIR$/controllers/UserProfileController.js" />
       </list>
     </option>
   </component>
@@ -186,7 +184,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="y" value="1560" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
   </component>
@@ -275,6 +273,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bomboka_frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bomboka_frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -312,8 +324,8 @@
       <recent name="C:\Users\Arnold\WebstormProjects\Bomboka_platform\FrontEnd\bomboka_frontend_3\js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/controllers" />
       <recent name="$PROJECT_DIR$/services" />
       <recent name="$PROJECT_DIR$/assets/css" />
@@ -410,15 +422,15 @@
       <workItem from="1488948680262" duration="3124000" />
       <workItem from="1488962659130" duration="2230000" />
       <workItem from="1488965693868" duration="642000" />
-      <workItem from="1488966889336" duration="9376000" />
+      <workItem from="1488966889336" duration="14112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139323000" />
+    <option name="totallyTimeSpent" value="144059000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="0" y="1560" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16306776" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -460,27 +472,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/css/Footer-Basic.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/home.js" />
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -638,14 +629,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/angular-upload.min.js" />
     <entry file="file://$PROJECT_DIR$/test.html" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4818">
@@ -742,16 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/directives/HeaderDirective.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -760,34 +733,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/UserService.js">
+    <entry file="file://$PROJECT_DIR$/controllers/UserProfileController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+        <state relative-caret-position="1254">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular-date-picker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular-date-picker/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular-date-picker/angular-date-picker.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user_profile_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+        <state relative-caret-position="299">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        <state relative-caret-position="66">
+          <caret line="3" column="110" selection-start-line="3" selection-start-column="110" selection-end-line="3" selection-end-column="110" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/UserProfileController.js">
+    <entry file="file://$PROJECT_DIR$/services/UserService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="220">
+          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
           <folding />
         </state>
       </provider>

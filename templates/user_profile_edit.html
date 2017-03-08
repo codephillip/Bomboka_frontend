@@ -30,12 +30,16 @@
             <input type="text" placeholder="User Name" ng-model="userctrl.data.username" class="signup-input">
             <input type="text" placeholder="Email or Phone Number" class="signup-input" ng-model="userctrl.data.email">
             <input type="text" placeholder="Address" class="signup-input" ng-model="userctrl.data.address">
-            <input type="text" placeholder="Date of Birth" class="signup-input" ng-model="userctrl.data.dob">
+
+            <input type="date" placeholder="Date of Birth" class="signup-input" ng-model="userctrl.data.dob">
+
+            <date-picker ng-model="userctrl.data.dob"></date-picker>
+            <p>{{userctrl.data.dob}}</p>
             <input type="text" placeholder="Phone Number" class="signup-input" ng-model="userctrl.data.phoneNumber">
             <select class="login-select" ng-model="userctrl.data.sex">
                 <optgroup label="Sex">
-                    <option value="12" selected="">Female</option>
-                    <option value="13">Male</option>
+                    <option value="Female" selected="">Female</option>
+                    <option value="Male">Male</option>
                 </optgroup>
             </select>
             <button class="btn btn-success" type="submit" ng-disabled="form.$invalname || userctrl.dataLoading">Save</button>

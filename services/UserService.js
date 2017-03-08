@@ -44,18 +44,22 @@
         }
 
         function sendImage(userId, data) {
-            return $http.post('http://localhost:9000/api/user/addimage/' + userId, {'image1' : data }, { headers: {'Content-Type': 'multipart/form-data'} });
+            return $http.post('http://localhost:9000/api/user/addimage/' + userId, {'image1': data}, {headers: {'Content-Type': 'multipart/form-data'}});
         }
 
         function updateInfo(user) {
+            console.log("DOB ");
+            console.log(user);
+            //captured date as string dd/mm/yyyy
+            var dateOfBirth = user.dob;
             var userObject = {
-                'fullnames':user.fullnames,
-                'username':user.username,
-                'password': user.password_signup1,
+                'fullnames': user.fullnames,
+                'username': user.username,
+                'address': user.address,
                 'email': user.email,
                 'phoneNumber': user.phoneNumber,
-                'dob': user.dob,
-                'address': user.address
+                'sex': user.sex,
+                'dob': dateOfBirth
             };
             return $http.post('http://localhost:9000/api/users/edit/' + user.key, userObject);
         }
