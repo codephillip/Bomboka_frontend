@@ -18,8 +18,11 @@
             .then(
                 function success(response) {
                     userctrl.data = response.data;
+                    //convert from String to Date object for the date input field
+                    userctrl.data['dob'] = new Date(response.data.dob);
                     //using $scope sends data to the header-directive
                     $scope.data = response.data;
+
                 },
                 function failure(error) {
                     console.log("Failed to get user data");

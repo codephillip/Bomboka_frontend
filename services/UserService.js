@@ -52,6 +52,8 @@
             console.log(user);
             //captured date as string dd/mm/yyyy
             var dateOfBirth = user.dob;
+            console.log(angular.isDate(dateOfBirth));
+            console.log(angular.isString(dateOfBirth));
             var userObject = {
                 'fullnames': user.fullnames,
                 'username': user.username,

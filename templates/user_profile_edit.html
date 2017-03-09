@@ -31,9 +31,8 @@
             <input type="text" placeholder="Email or Phone Number" class="signup-input" ng-model="userctrl.data.email">
             <input type="text" placeholder="Address" class="signup-input" ng-model="userctrl.data.address">
 
-            <input type="date" placeholder="Date of Birth" class="signup-input" ng-model="userctrl.data.dob">
-
-            <date-picker ng-model="userctrl.data.dob"></date-picker>
+            <input type="date" class="signup-input" ng-model="userctrl.data.dob" placeholder="Date of Birth" min="1930-01-01" max="2030-12-31">
+            <!--<date-picker ng-model="userctrl.data.dob"></date-picker>-->
             <p>{{userctrl.data.dob}}</p>
             <input type="text" placeholder="Phone Number" class="signup-input" ng-model="userctrl.data.phoneNumber">
             <select class="login-select" ng-model="userctrl.data.sex">
