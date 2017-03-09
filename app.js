@@ -1,7 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('bomboka', ['ui.router', 'ngCookies', 'LocalStorageModule', 'ngFileUpload', 'mp.datePicker'])
+    // angular.module('bomboka', ['ui.router', 'ngCookies', 'LocalStorageModule', 'ngFileUpload', 'mp.datePicker'])
+    angular.module('bomboka', ['ui.router', 'ngCookies'])
         .config(Router, function (localStorageServiceProvider) {
             localStorageServiceProvider
                 .setPrefix('bomboka');
@@ -38,10 +39,10 @@
                 templateUrl: 'templates/user_profile_edit.html',
                 controller: 'UserProfileController as userctrl'
             })
-            .state('product_status_page', {
-                url: '/product_status_page',
-                templateUrl: 'templates/product_status_page.html',
-                controller: 'CourierController as corctrl'
+            .state('courier_orders', {
+                url: '/courier_orders',
+                templateUrl: 'templates/courier_orders.html',
+                controller: 'CourierController as couctrl'
             })
             .state('login', {
                 url: '/login',

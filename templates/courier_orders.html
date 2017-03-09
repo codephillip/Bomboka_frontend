@@ -1,0 +1,22 @@
+<div class="container">
+    <header-directive></header-directive>
+
+    <div style="margin: 40px">
+        <table border="1">
+            <tr>
+                <th>Product Name</th>
+                <th>Buyer</th>
+                <th>Valid</th>
+                <th>Received</th>
+                <th>Delivery Time</th>
+            </tr>
+            <tr ng-repeat="order in couctrl.data">
+                <td>{{order.product.name}}</td>
+                <td>{{order.buyer.username}}</td>
+                <td>{{order.valid}}</td>
+                <td>{{order.received}}</td>
+                <td>{{order.deliveryTime}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
