@@ -7,7 +7,6 @@
     CourierController.$inject = ['CourierService'];
     function CourierController(CourierService) {
         var couctrl = this;
-        couctrl.dummy = "codephillip";
 
         //todo get courier_id after login
         CourierService.getCourierOrders("58bd5043e885f018bd8ff223").then(

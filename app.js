@@ -44,6 +44,14 @@
                 templateUrl: 'templates/courier_orders.html',
                 controller: 'CourierController as couctrl'
             })
+            .state('product_status_page', {
+                url: '/product_status_page',
+                templateUrl: 'templates/product_status_page.html',
+                controller: 'ProductStatusPageController as psctrl',
+                params: {
+                    orderObject: null
+                }
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/login.html',

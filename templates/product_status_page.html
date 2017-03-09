@@ -1,17 +1,14 @@
 <div class="container">
     <header-directive></header-directive>
-
     <div style="margin: 40px">
-        <p>Product Id: {{couctrl.dummy}}</p>
-        <p>Buyer Name:</p>
-        <p>Vendor Name:</p>
-        <p>Address:</p>
-        <p>Telephone:</p>
-        <p>Deadline:</p>
+        <p>Product Name: {{psctrl.order.product.name}}</p>
+        <p>Buyer Name: {{psctrl.order.buyer.username}}</p>
+        <p>Vendor Name: </p>
+        <p>Address: {{psctrl.order.buyer.address}}</p>
+        <p>Telephone: {{psctrl.order.buyer.telephone}}</p>
+        <p>Delivery Time: {{psctrl.order.deliveryTime}}</p>
         <p>Commission:</p>
-        <p>Valid:</p>
-        <p>Received:</p>
-
+        <p>Valid: {{psctrl.order.valid}}</p>
+        <p>Received: {{psctrl.order.received}}</p>
     </div>
-
 </div>
