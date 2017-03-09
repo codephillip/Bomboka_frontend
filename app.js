@@ -38,6 +38,11 @@
                 templateUrl: 'templates/user_profile_edit.html',
                 controller: 'UserProfileController as userctrl'
             })
+            .state('product_status_page', {
+                url: '/product_status_page',
+                templateUrl: 'templates/product_status_page.html',
+                controller: 'CourierController as corctrl'
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/login.html',
