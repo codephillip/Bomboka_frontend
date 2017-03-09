@@ -4,7 +4,7 @@
     angular.module('bomboka')
         .controller('UserProfileController', UserProfileController);
 
-
+    //UserProfileController works on user_profile.html and user_profile_edit.html
     UserProfileController.$inject = ['localStorageService', 'UserService', '$scope', 'Upload', '$timeout'];
     function UserProfileController(localStorageService, UserService, $scope, Upload, $timeout) {
         var userctrl = this;
@@ -18,6 +18,8 @@
             .then(
                 function success(response) {
                     userctrl.data = response.data;
+                    //slice the dob String for the user_profile.html
+                    userctrl.data['slicedDOB'] = response.data.dob.slice(0, 10);
                     //convert from String to Date object for the date input field
                     userctrl.data['dob'] = new Date(response.data.dob);
                     //using $scope sends data to the header-directive
