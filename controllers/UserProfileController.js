@@ -18,13 +18,12 @@
             .then(
                 function success(response) {
                     userctrl.data = response.data;
+                    //save the new user object that will be used by the header-directive
+                    localStorageService.set('userObject', response.data);
                     //slice the dob String for the user_profile.html
                     userctrl.data['slicedDOB'] = response.data.dob.slice(0, 10);
                     //convert from String to Date object for the date input field
                     userctrl.data['dob'] = new Date(response.data.dob);
-                    //using $scope sends data to the header-directive
-                    $scope.data = response.data;
-
                 },
                 function failure(error) {
                     console.log("Failed to get user data");
