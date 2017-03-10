@@ -3,9 +3,10 @@
     <div style="margin: 40px">
         <p>Product Name: {{psctrl.order.product.name}}</p>
         <p>Buyer Name: {{psctrl.order.buyer.username}}</p>
-        <p>Vendor Name: </p>
+        <!--todo get vendor from product-->
+        <p>Vendor Name: {{psctrl.order.product.vendor.name}}</p>
         <p>Address: {{psctrl.order.buyer.address}}</p>
-        <p>Telephone: {{psctrl.order.buyer.telephone}}</p>
+        <p>Telephone: {{psctrl.order.buyer.phoneNumber}}</p>
         <p>Delivery Time: {{psctrl.order.deliveryTime}}</p>
         <p>Commission:</p>
         <p>Valid: {{psctrl.order.valid}}</p>
