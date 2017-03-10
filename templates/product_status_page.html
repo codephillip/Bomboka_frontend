@@ -15,5 +15,8 @@
             <input type="text" ng-model="psctrl.verication_code">
             <button  class="btn btn-success" type="submit">Verify</button>
         </form>
+        <br><br>
+        <!--todo display proper server response message-->
+        <p style="color: coral" ng-show="psctrl.isVisible">{{psctrl.serverResponse}}</p>
     </div>
 </div>
