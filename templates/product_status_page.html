@@ -7,7 +7,7 @@
         <p>Vendor Name: {{psctrl.order.product.vendor.name}}</p>
         <p>Address: {{psctrl.order.buyer.address}}</p>
         <p>Telephone: {{psctrl.order.buyer.phoneNumber}}</p>
-        <p>Delivery Time: {{psctrl.order.deliveryTime}}</p>
+        <p>Delivery Time: {{psctrl.order.deliveryTime | date: 'YYYY-MM-DD HH:mm:ss'}}</p>
         <p>Commission:</p>
         <p>Valid: {{psctrl.order.valid}}</p>
         <p>Received: {{psctrl.order.received}}</p>

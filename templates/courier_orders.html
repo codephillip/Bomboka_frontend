@@ -10,7 +10,7 @@
                 <th>Received</th>
                 <th>Delivery Time</th>
             </tr>
-            <tr ng-repeat="order in couctrl.data">
+            <tr ng-repeat="order in couctrl.data" ng-click="couctrl.openProductStatusPage(order)">
                 <td>{{order.product.name}}</td>
                 <td>{{order.buyer.username}}</td>
                 <td>{{order.valid}}</td>
@@ -19,11 +19,4 @@
             </tr>
         </table>
     </div>
-
-    <!--todo after making the table clickable-->
-    <div ng-repeat="order in couctrl.data">
-        <a ui-sref="product_status_page({orderObject:order})">{{order.product.name}}</a>
-
-    </div>
-
 </div>
