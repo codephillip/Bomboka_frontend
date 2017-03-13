@@ -19,8 +19,7 @@
         couctrl.statusChoice = couctrl.statusChoices[0].id;
 
         //give start and end date default values
-        couctrl.startDate = new Date();
-        couctrl.endDate = new Date();
+        couctrl.startDate = couctrl.endDate = new Date();
         couctrl.isDateRangeWrong = false;
 
         //todo get courier_id after login
@@ -55,29 +54,34 @@
             $state.go('product_status_page', {'orderObject': orderObject})
         }
 
+
         function onValueChange() {
             console.log(couctrl.startDate);
-            console.log(couctrl.endDate);
 
-            if (couctrl.endDate >= couctrl.startDate){
-                console.log("good range");
-                couctrl.isDateRangeWrong = false;
+            if (checkDateRange()) {
+                //todo get courier_id after login
+                CourierService.getOrdersUsingParams("58c2cd5be885f0102b77777e", couctrl.statusChoice, couctrl.vendorChoice, couctrl.startDate, couctrl.endDate).then(
+                    function success(response) {
+                        couctrl.data = response.data;
+                    },
+                    function failure(error) {
+                        console.log("Failed to get delivered orders");
+                    }
+                );
+            }
 
-            }
-            else{
-                console.log("bad range");
-                couctrl.isDateRangeWrong = true;
-                throw new RangeError;
-            }
-            //todo get courier_id after login
-            CourierService.getOrdersUsingParams("58c2cd5be885f0102b77777e", couctrl.statusChoice, couctrl.vendorChoice).then(
-                function success(response) {
-                    couctrl.data = response.data;
-                },
-                function failure(error) {
-                    console.log("Failed to get delivered orders");
+            function checkDateRange() {
+                if (couctrl.endDate >= couctrl.startDate){
+                    console.log("good range");
+                    couctrl.isDateRangeWrong = false;
+                    return true
                 }
-            );
+                else{
+                    console.log("bad range");
+                    couctrl.isDateRangeWrong = true;
+                    throw new RangeError;
+                }
+            }
         }
     }
 })();
