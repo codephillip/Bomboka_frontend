@@ -18,7 +18,13 @@
                 ng-change="couctrl.onValueChange()"
                 ng-options="choice.id as choice.name for choice in couctrl.vendorChoices">
         </select>
-        <!--<button type="submit">Submit</button>-->
+
+        <br><br>
+        <span>Start Date</span>
+        <input type="date" class="signup-input" ng-model="couctrl.startDate" ng-change="couctrl.onValueChange()" placeholder="Start Date" min="2017-01-01" max="2060-12-31">
+        <span>End Date</span>
+        <input type="date" class="signup-input" ng-model="couctrl.endDate" ng-change="couctrl.onValueChange()" placeholder="Start Date" min="2017-01-01" max="2060-12-31">
+        <p style="color: coral" ng-show="couctrl.isDateRangeWrong">Please insert the right date range</p>
     </form>
 
     <div style="margin: 40px">
@@ -35,7 +41,7 @@
                 <td>{{order.buyer.username}}</td>
                 <td>{{order.valid}}</td>
                 <td>{{order.received}}</td>
-                <td>{{order.deliveryTime}}</td>
+                <td>{{order.deliveryTime | date}}</td>
             </tr>
         </table>
     </div>

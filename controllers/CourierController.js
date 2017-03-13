@@ -15,8 +15,13 @@
             {id: true, name: 'Delivered'},
             {id: false, name: 'Not Delivered'}
         ];
-        //give a default choice of 'Not Delivered'
-        couctrl.statusChoice = couctrl.statusChoices[1].id;
+        //give a default choice of 'Delivered'
+        couctrl.statusChoice = couctrl.statusChoices[0].id;
+
+        //give start and end date default values
+        couctrl.startDate = new Date();
+        couctrl.endDate = new Date();
+        couctrl.isDateRangeWrong = false;
 
         //todo get courier_id after login
         CourierService.getCourierOrders("58c2cd5be885f0102b77777e").then(
@@ -51,6 +56,19 @@
         }
 
         function onValueChange() {
+            console.log(couctrl.startDate);
+            console.log(couctrl.endDate);
+
+            if (couctrl.endDate >= couctrl.startDate){
+                console.log("good range");
+                couctrl.isDateRangeWrong = false;
+
+            }
+            else{
+                console.log("bad range");
+                couctrl.isDateRangeWrong = true;
+                throw new RangeError;
+            }
             //todo get courier_id after login
             CourierService.getOrdersUsingParams("58c2cd5be885f0102b77777e", couctrl.statusChoice, couctrl.vendorChoice).then(
                 function success(response) {
