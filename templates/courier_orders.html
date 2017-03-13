@@ -1,7 +1,7 @@
 <div class="container">
     <header-directive></header-directive>
 
-    <form name="form" ng-submit="couctrl.verifyCode()" role="form" >
+    <form name="form" ng-submit="couctrl.onValueChange()" role="form">
         <span>Status</span>
         <select
                 ng-init="couctrl.statusChoice"
@@ -9,6 +9,16 @@
                 ng-change="couctrl.onValueChange()"
                 ng-options="choice.id as choice.name for choice in couctrl.statusChoices">
         </select>
+        <br><br>
+
+        <span>Vendor</span>
+        <select
+                ng-init="couctrl.vendorChoice"
+                ng-model="couctrl.vendorChoice"
+                ng-change="couctrl.onValueChange()"
+                ng-options="choice.id as choice.name for choice in couctrl.vendorChoices">
+        </select>
+        <!--<button type="submit">Submit</button>-->
     </form>
 
     <div style="margin: 40px">

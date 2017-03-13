@@ -19,29 +19,42 @@
         couctrl.statusChoice = couctrl.statusChoices[1].id;
 
         //todo get courier_id after login
-        CourierService.getCourierOrders("58bd504be885f018bd8ff224").then(
+        CourierService.getCourierOrders("58c2cd5be885f0102b77777e").then(
             function success(response) {
                 couctrl.data = response.data;
+                createVendorChoices(CourierService.getAllVendors());
             },
             function failure(error) {
                 console.log("Failed to get orders");
             }
         );
 
+        function createVendorChoices(promise) {
+            promise.then(
+                function success(response) {
+                    couctrl.vendorChoices = [];
+                    for (var i =0; i <= response.data.length; i++)
+                        couctrl.vendorChoices.push(createVendorChoiceObject(response.data[i].key, response.data[i].name));
+
+                    function createVendorChoiceObject(id, name) {
+                        return {'id': id, 'name': name}
+                    }
+                },
+                function failure(error) {
+                    console.log("Failed to get vendors");
+                }
+            );
+        }
+
         function openProductStatusPage(orderObject) {
             $state.go('product_status_page', {'orderObject': orderObject})
         }
 
         function onValueChange() {
-            console.log("selected value");
-            console.log(couctrl.statusChoice);
-
             //todo get courier_id after login
-            CourierService.getOrdersUsingParams("58bd504be885f018bd8ff224", couctrl.statusChoice).then(
+            CourierService.getOrdersUsingParams("58c2cd5be885f0102b77777e", couctrl.statusChoice, couctrl.vendorChoice).then(
                 function success(response) {
                     couctrl.data = response.data;
-                    console.log("Successfully got orders");
-                    console.log(couctrl.data);
                 },
                 function failure(error) {
                     console.log("Failed to get delivered orders");
