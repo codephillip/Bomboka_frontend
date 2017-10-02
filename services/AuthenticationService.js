@@ -47,6 +47,7 @@
             var cookieExp = new Date();
             cookieExp.setDate(cookieExp.getDate() + 7);
             $cookies.putObject('globals', $rootScope.globals, {expires: cookieExp});
+            //use localStorageService to allow proper access to user data in other sections
             localStorageService.set('userObject', userObject);
             console.log("User cookie data" + $cookies.getObject('globals').currentUser.username);
         }

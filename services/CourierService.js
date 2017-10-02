@@ -35,6 +35,7 @@
             var endDateString = endDate.getDate()  + "/" + (endDate.getMonth() + 1) + "/" + endDate.getUTCFullYear();
             console.log('endDateString');
             console.log(endDateString);
+            //todo use params
             return $http.get('http://127.0.0.1:9000/api/orders/courier/byParams?courierID=' + courierId + '&isDelivered=' + isDelivered + '&vendorID=' + vendorId + '&startDate=' + startDateString + '&endDate=' + endDateString)
         }
     }
