@@ -20,27 +20,27 @@
             console.log(username);
             console.log(password);
 
-            $http.post('http://localhost:9000/api/users/signin', {username: username, password: password})
+            $http.post('http://127.0.0.1:8000/auth/login/', {username: username, password: password})
                 .then(function success(response) {
                     callback(response);
                 });
         }
 
-        function SetCredentials(username, password, userObject) {
+        function SetCredentials(userObject) {
             console.log("Setcredentials");
             console.log(userObject);
-            var authdata = Base64.encode(username + ':' + password);
+            console.log(userObject.auth_token);
+            // var token = Base64.encode(username.);
+            let token = userObject.auth_token;
 
             $rootScope.globals = {
                 currentUser: {
-                    username: username,
-                    authdata: authdata,
-                    userkey: userObject.key
+                    token: userObject.auth_token
                 }
             };
 
             // set default auth header for http requests
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+            $http.defaults.headers.common['Authorization'] = 'JWT ' + token;
 
             // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
             console.log("Saving cookie" + $rootScope.globals);
@@ -49,7 +49,7 @@
             $cookies.putObject('globals', $rootScope.globals, {expires: cookieExp});
             //use localStorageService to allow proper access to user data in other sections
             localStorageService.set('userObject', userObject);
-            console.log("User cookie data" + $cookies.getObject('globals').currentUser.username);
+            console.log("User cookie data" + $cookies.getObject('globals').currentUser.token);
         }
 
         function ClearCredentials() {

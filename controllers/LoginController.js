@@ -16,9 +16,13 @@ function LoginController(UserService, $location, AuthenticationService, FlashSer
     function login() {
         vm.dataLoading = true;
         AuthenticationService.Login(vm.username, vm.password, function (response) {
-            AuthenticationService.SetCredentials(vm.username, vm.password, response.data);
+            AuthenticationService.SetCredentials(response.data);
             $location.path('home');
         });
+    }
+
+    function getUserData(token) {
+
     }
 
     function register() {
