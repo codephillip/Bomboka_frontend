@@ -28,28 +28,9 @@
 
         function SetCredentials(userObject) {
             console.log("Setcredentials");
-            console.log(userObject);
-            console.log(userObject.auth_token);
-            // var token = Base64.encode(username.);
-            let token = userObject.auth_token;
-
-            $rootScope.globals = {
-                currentUser: {
-                    token: userObject.auth_token
-                }
-            };
-
+            var token = userObject.auth_token;
             // set default auth header for http requests
-            $http.defaults.headers.common['Authorization'] = 'JWT ' + token;
-
-            // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
-            console.log("Saving cookie" + $rootScope.globals);
-            var cookieExp = new Date();
-            cookieExp.setDate(cookieExp.getDate() + 7);
-            $cookies.putObject('globals', $rootScope.globals, {expires: cookieExp});
-            //use localStorageService to allow proper access to user data in other sections
-            localStorageService.set('userObject', userObject);
-            console.log("User cookie data" + $cookies.getObject('globals').currentUser.token);
+            $http.defaults.headers.common['Authorization'] = 'Token ' + token;
         }
 
         function ClearCredentials() {

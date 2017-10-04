@@ -1,8 +1,8 @@
 angular.module('bomboka')
     .controller('LoginController', LoginController);
 
-LoginController.$inject = ['UserService', '$location', 'AuthenticationService', 'FlashService'];
-function LoginController(UserService, $location, AuthenticationService, FlashService) {
+LoginController.$inject = ['UserService', '$location', '$cookies', '$rootScope', 'AuthenticationService', 'FlashService', 'localStorageService'];
+function LoginController(UserService, $location, $cookies, $rootScope, AuthenticationService, FlashService, localStorageService) {
     var vm = this;
 
     vm.login = login;
@@ -15,14 +15,57 @@ function LoginController(UserService, $location, AuthenticationService, FlashSer
 
     function login() {
         vm.dataLoading = true;
-        AuthenticationService.Login(vm.username, vm.password, function (response) {
-            AuthenticationService.SetCredentials(response.data);
-            $location.path('home');
-        });
+        AuthenticationService.Login(vm.username, vm.password, saveUserData);
     }
 
-    function getUserData(token) {
+    function saveUserData(response) {
+        console.log("save user data");
+        console.log(response);
+        AuthenticationService.SetCredentials(response.data);
 
+        UserService.getUserIdFromServer().then(
+            function (response) {
+                console.log(response.data);
+                saveUserDetails(response.data);
+            },
+            function (response) {
+                console.log(response.data);
+            }
+        );
+    }
+
+    function saveUserDetails(object) {
+        UserService.getUserDetailsFromServer(object['id']).then(
+            function success(response) {
+                var userObject = response.data;
+
+                $rootScope.globals = {
+                    currentUser: {
+                        username: userObject.username,
+                        email: userObject.email,
+                        id: userObject.id,
+                        first_name: userObject.first_name,
+                        last_name: userObject.last_name,
+                        image: userObject.image,
+                        phone: userObject.phone
+                    }
+                };
+
+                // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
+                console.log("Saving cookie" + $rootScope.globals);
+                var cookieExp = new Date();
+                cookieExp.setDate(cookieExp.getDate() + 7);
+                $cookies.putObject('globals', $rootScope.globals, {expires: cookieExp});
+                //use localStorageService to allow proper access to user data in other sections
+                localStorageService.set('userObject', userObject);
+                console.log("User cookie data" + $cookies.getObject('globals').currentUser.username);
+                // redirect to home screen(index page)
+                $location.path('home');
+            },
+            function failure(response) {
+                console.log(response.data);
+            }
+        );
     }
 
     function register() {

@@ -12,6 +12,9 @@
         service.getById = getById;
         service.sendImage = sendImage;
         service.updateInfo = updateInfo;
+        service.getUserIdFromServer = getUserIdFromServer;
+        service.getUserDetailsFromServer = getUserDetailsFromServer;
+        service.hello = hello;
 
         return service;
 
@@ -41,6 +44,20 @@
 
         function getById(userId) {
             return $http.get('http://localhost:9000/api/user/' + userId);
+        }
+
+        function getUserIdFromServer() {
+            console.log("get user id");
+            return $http.get('http://127.0.0.1:8000/auth/me/');
+        }
+
+        function getUserDetailsFromServer(userId) {
+            console.log("get user details");
+            return $http.get('http://127.0.0.1:8000/api/v1/users/' + userId);
+        }
+
+        function hello() {
+            console.log("hello world");
         }
 
         function sendImage(userId, data) {
