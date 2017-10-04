@@ -14,7 +14,6 @@ function ProductsController(ProductService) {
         ProductService.GetAll()
             .then(function success(response) {
                 prodctrl.data = response.data;
-                console.log("products", prodctrl.data);
             }, function failure(error) {
                 console.log("Server Connection Error", error);
             });

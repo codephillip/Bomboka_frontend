@@ -57,6 +57,7 @@ function LoginController(UserService, $location, $cookies, $rootScope, $http, Au
                     }
                 };
 
+                // todo decide which storage mechanism to use(localStorageService only)
                 // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
                 console.log("Saving cookie" + $rootScope.globals);
                 var cookieExp = new Date();

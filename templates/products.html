@@ -29,7 +29,7 @@
                                 <a ui-sref="product_detail({productObject: prod})">
                                     <div class="thumbnail" >
                                         <!--todo replace image url with a base url-->
-                                        <img ng-src="http://127.0.0.1:8000/photos/products/{{prod.image}}" width="120" height="50">
+                                        <img ng-src="{{prod.image | formatImage}}" width="120" height="50">
                                         <div class="thumbnail-desc">
                                             <p class="thumbnail-paragraph">{{prod.name}}</p>
                                             <p class="thumbnail-paragraph">{{prod.price}}</p>

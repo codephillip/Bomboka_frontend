@@ -8,6 +8,7 @@
     UserService.$inject = ['$http', '$location'];
     function UserService($http, $location) {
         var service = {};
+        // todo refactor this
         service.Create = Create;
         service.getById = getById;
         service.sendImage = sendImage;

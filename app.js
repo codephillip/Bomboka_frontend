@@ -7,11 +7,14 @@
             localStorageServiceProvider
                 .setPrefix('bomboka');
         })
-        .run(run);
+        .run(run)
+        .filter('formatImage', formatImage);
 
     function Router($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
+        // User is automatically redirected to the products page when logged in
+        // Products page acts as a home screen
             .state('products', {
                 url: '/',
                 templateUrl: 'templates/products.html',
@@ -60,6 +63,12 @@
             });
     }
 
+    /**
+     * Handles auto login.
+     * For first time users, we redirect them to the login screen.
+     * For a user that has previously used the system within the last seven days,
+     * we automatically log them into the system(login)
+     * */
     run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
     function run($rootScope, $location, $cookies, $http) {
         // keep user logged in after page refresh
@@ -82,4 +91,10 @@
         });
     }
 
+    // formats the image url for proper image access from backend
+    function formatImage() {
+        return function(x) {
+            return x.replace('api/v1', 'photos');
+        };
+    }
 })();
