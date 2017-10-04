@@ -15,7 +15,7 @@
         return service;
 
         function GetAll() {
-            return $http.get('http://127.0.0.1:9000/api/shop/all/products');
+            return $http.get('http://127.0.0.1:8000/api/v1/products');
         }
 
         function GetByShop(shopId) {

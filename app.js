@@ -6,7 +6,8 @@
         .config(Router, function (localStorageServiceProvider) {
             localStorageServiceProvider
                 .setPrefix('bomboka');
-        });
+        })
+        .run(run);
 
     function Router($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -62,9 +63,13 @@
     run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
     function run($rootScope, $location, $cookies, $http) {
         // keep user logged in after page refresh
+        console.log("app started");
+
         $rootScope.globals = $cookies.getObject('globals') || {};
+        console.log("user object", $rootScope.globals);
         if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+            console.log("user is logged in");
+            $http.defaults.headers.common['Authorization'] = 'Token ' + $rootScope.globals.currentUser.token;
         }
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {

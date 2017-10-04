@@ -4,17 +4,21 @@ angular.module('bomboka')
 ProductsController.$inject = ['ProductService'];
 function ProductsController(ProductService) {
     var prodctrl = this;
-
-    //todo extract shop_id and pass it to this method
-    prodctrl.data = ProductService.GetAll()
-        .then(function success(response) {
-            prodctrl.data = response.data;
-        }, function failure(error) {
-            console.log("Server Connection Error", error);
-        });
-    console.log(prodctrl.data);
-
     prodctrl.searchProducts = searchProducts;
+    prodctrl.displayProducts = displayProducts;
+
+    console.log("display products");
+    displayProducts();
+    function displayProducts() {
+        //todo extract shop_id and pass it to this method
+        ProductService.GetAll()
+            .then(function success(response) {
+                prodctrl.data = response.data;
+                console.log("products", prodctrl.data);
+            }, function failure(error) {
+                console.log("Server Connection Error", error);
+            });
+    }
 
     function searchProducts() {
         prodctrl.data = ProductService.Search(prodctrl.keyword)

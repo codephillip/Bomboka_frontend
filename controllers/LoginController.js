@@ -1,8 +1,8 @@
 angular.module('bomboka')
     .controller('LoginController', LoginController);
 
-LoginController.$inject = ['UserService', '$location', '$cookies', '$rootScope', 'AuthenticationService', 'FlashService', 'localStorageService'];
-function LoginController(UserService, $location, $cookies, $rootScope, AuthenticationService, FlashService, localStorageService) {
+LoginController.$inject = ['UserService', '$location', '$cookies', '$rootScope', '$http', 'AuthenticationService', 'FlashService', 'localStorageService'];
+function LoginController(UserService, $location, $cookies, $rootScope, $http, AuthenticationService, FlashService, localStorageService) {
     var vm = this;
 
     vm.login = login;
@@ -34,6 +34,11 @@ function LoginController(UserService, $location, $cookies, $rootScope, Authentic
         );
     }
 
+    function stripToken() {
+        const authHeader = $http.defaults.headers.common.Authorization;
+        return authHeader.substring(6);
+    }
+
     function saveUserDetails(object) {
         UserService.getUserDetailsFromServer(object['id']).then(
             function success(response) {
@@ -47,7 +52,8 @@ function LoginController(UserService, $location, $cookies, $rootScope, Authentic
                         first_name: userObject.first_name,
                         last_name: userObject.last_name,
                         image: userObject.image,
-                        phone: userObject.phone
+                        phone: userObject.phone,
+                        token: stripToken()
                     }
                 };
 
