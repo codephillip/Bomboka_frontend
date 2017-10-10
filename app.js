@@ -60,6 +60,11 @@
                 url: '/login',
                 templateUrl: 'templates/login.html',
                 controller: 'LoginController as vm'
+            })
+            .state('logout', {
+                url: '/logout',
+                templateUrl: 'templates/home.html',
+                controller: 'LogoutController as ctrl'
             });
     }
 

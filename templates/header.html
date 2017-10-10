@@ -10,9 +10,12 @@
             <ul class="nav navbar-nav navbar-right" id="bomboka-nav">
                 <li role="presentation" class="profile-item">
                     <a href="#!/user_profile"> <img
-                            ng-src="http://127.0.0.1:9000/fetch_image_file/profile_image/{{headctrl.data.key}}/{{headctrl.data.image}}"
+                            ng-src="http://127.0.0.1:8000/fetch_image_file/profile_image/{{headctrl.data.key}}/{{headctrl.data.image}}"
                             width="30" id="nva-pro-pic"><span>{{headctrl.data.username}}</span></a>
                 </li>
+                <!--ng-click="logoutUser()"-->
+                <!--<li role="presentation"><a href="#!/cart">Log Out</a></li>-->
+                <li role="presentation"><a href="#!/logout">Logout</a></li>
                 <li role="presentation"><a href="#">Home</a></li>
                 <li role="presentation"><a href="#!/cart">Cart</a></li>
                 <li role="presentation">

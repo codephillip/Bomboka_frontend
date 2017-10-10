@@ -10,6 +10,7 @@
         var service = {};
 
         service.Login = Login;
+        service.logout = logout;
         service.SetCredentials = SetCredentials;
         service.ClearCredentials = ClearCredentials;
 
@@ -26,6 +27,11 @@
                 });
         }
 
+        function logout() {
+            console.log("logout server request");
+            return $http.post('http://127.0.0.1:8000/auth/logout/')
+        }
+
         function SetCredentials(userObject) {
             console.log("Setcredentials");
             var token = userObject.auth_token;
@@ -36,10 +42,12 @@
         function ClearCredentials() {
             $rootScope.globals = {};
             $cookies.remove('globals');
+            localStorageService.clearAll();
             $http.defaults.headers.common.Authorization = 'Basic';
         }
     }
 
+    // todo encrypt AuthToken using Base64
     // Base64 encoding service used by AuthenticationService
     var Base64 = {
 
