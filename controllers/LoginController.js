@@ -17,10 +17,10 @@
 
         function login() {
             vm.dataLoading = true;
-            AuthenticationService.Login(vm.username, vm.password, saveUserData);
+            AuthenticationService.Login(vm.username, vm.password, receiveUserDetails);
         }
 
-        function saveUserData(response) {
+        function receiveUserDetails(response) {
             console.log("save user data");
             console.log(response);
             AuthenticationService.SetCredentials(response.data);
