@@ -6,10 +6,11 @@
         .factory('UserService', UserService);
 
     UserService.$inject = ['$http', '$location'];
+
     function UserService($http, $location) {
         var service = {};
         // todo refactor this
-        service.Create = Create;
+        service.signUp = signUp;
         service.getById = getById;
         service.sendImage = sendImage;
         service.updateInfo = updateInfo;
@@ -19,28 +20,55 @@
 
         return service;
 
-        function Create(user) {
+        function signUp(user) {
             console.log("signing up");
+            console.log(user);
             //todo compare emails and passwords
-            return $http({
-                url: 'http://localhost:9000/api/users/signup',
-                method: "POST",
-                data: {
-                    'username': user.firstname + user.lastname,
-                    'password': user.password_signup1,
-                    'email': user.email_phone1,
-                    'gender': user.sex,
-                    'country': user.country
-                }
+            var data = {
+                "username": "testuser1",
+                "first_name": generateRandomString(),
+                "last_name": generateRandomString(),
+                "dob": "2017-08-21",
+                "password": "password123",
+                "gender": 0,
+                "email": "testuser@example.com",
+                "image": user.image,
+                "phone": "256756767678"
+            };
+            var fd = new FormData();
+            console.log("form: ", fd);
+            for(var value in data) {
+                console.log(value, data[value]);
+                fd.append(value, data[value])
+            }
+
+            var uploadUrl = 'http://127.0.0.1:8000/auth/register/';
+            return $http.post(uploadUrl, fd, {
+                transformRequest:angular.identity,
+                headers: {'Content-Type': undefined}
             }).then(function (response) {
-                    // success
-                    console.log("Successfully signed up");
-                    $location.path("home");
-                },
-                function (response) { // optional
-                    // failed
-                    console.log("Failed to signed up");
-                });
+                console.log('response ::::',response.data);
+                return response.data;
+            });
+
+            // return $http({
+            //     url: 'http://127.0.0.1:8000/auth/register/',
+            //     method: "POST",
+            //     data: JSON.stringify(data),
+            //         transformRequest:angular.identity,
+            //         headers: {'Content-Type': undefined}
+            //     // headers: {'Content-Type': 'charset=utf-8'}
+            //
+            // }).then(function (response) {
+            //         // success
+            //         console.log("Successfully signed up");
+            //         $location.path("home");
+            //     },
+            //     function (response) { // optional
+            //         // failed
+            //         console.log("Failed to signed up");
+            //         console.log(response.data);
+            //     });
         }
 
         function getById(userId) {
@@ -85,4 +113,7 @@
         }
     }
 
+    function generateRandomString() {
+        return Math.random().toString(36).substring(7);
+    }
 })();

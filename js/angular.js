@@ -2137,7 +2137,7 @@ function setupModuleLoader(window) {
      * `angular.module` is used to configure the {@link auto.$injector $injector}.
      *
      * ```js
-     * // Create a new module
+     * // signUp a new module
      * var myModule = angular.module('myModule', []);
      *
      * // register a new service
@@ -3805,7 +3805,7 @@ forEach({
     var eventFns = events && events[eventName];
 
     if (eventFns) {
-      // Create a dummy event to pass to the handlers
+      // signUp a dummy event to pass to the handlers
       dummyEvent = {
         preventDefault: function() { this.defaultPrevented = true; },
         isDefaultPrevented: function() { return this.defaultPrevented === true; },
@@ -4185,7 +4185,7 @@ function annotate(fn, strictDi, name) {
  * @ngdoc method
  * @name $injector#instantiate
  * @description
- * Create a new instance of JS type. The method takes a constructor function, invokes the new
+ * signUp a new instance of JS type. The method takes a constructor function, invokes the new
  * operator, and supplies all of the arguments to the constructor function as specified by the
  * constructor annotation.
  *
@@ -29602,7 +29602,7 @@ var ngOptionsDirective = ['$compile', '$document', '$parse', function($compile, 
       trackBy: trackBy,
       getTrackByValue: getTrackByValue,
       getWatchables: $parse(valuesFn, function(optionValues) {
-        // Create a collection of things that we would like to watch (watchedArray)
+        // signUp a collection of things that we would like to watch (watchedArray)
         // so that they can all be watched using a single $watchCollection
         // that only runs the handler once if anything changes
         var watchedArray = [];

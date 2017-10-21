@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('bomboka', ['ui.router', 'ngCookies', 'LocalStorageModule', 'ngFileUpload'])
+    var app = angular.module('bomboka', ['ui.router', 'ngCookies', 'LocalStorageModule', 'ngFileUpload'])
     // angular.module('bomboka', ['ui.router', 'ngCookies'])
         .config(Router, function (localStorageServiceProvider) {
             localStorageServiceProvider
@@ -102,4 +102,22 @@
             return x.replace('api/v1', 'photos');
         };
     }
+
+    app.directive('file', function() {
+        return {
+            require:"ngModel",
+            restrict: 'A',
+            link: function($scope, el, attrs, ngModel){
+                el.bind('change', function(event){
+                    var files = event.target.files;
+                    var file = files[0];
+                    console.log("uploading file");
+                    console.log(file);
+                    $scope.userImage = file;
+                    ngModel.$setViewValue(file);
+                    $scope.$apply();
+                });
+            }
+        };
+    });
 })();

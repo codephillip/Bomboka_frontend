@@ -456,7 +456,7 @@ function $Resolve(  $q,    $injector) {
       }
       
       function invoke(key, invocable, params) {
-        // Create a deferred for this invocation. Failures will propagate to the resolution as well.
+        // signUp a deferred for this invocation. Failures will propagate to the resolution as well.
         var invocation = $q.defer(), waitParams = 0;
         function onfailure(reason) {
           invocation.reject(reason);
@@ -2254,7 +2254,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
       return state.url ? state : (state.parent ? state.parent.navigable : null);
     },
 
-    // Own parameters for this state. state.url.params is already built at this point. Create and add non-url params
+    // Own parameters for this state. state.url.params is already built at this point. signUp and add non-url params
     ownParams: function(state) {
       var params = state.url && state.url.params || new $$UMFP.ParamSet();
       forEach(state.params || {}, function(config, id) {

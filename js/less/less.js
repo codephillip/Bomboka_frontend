@@ -99,7 +99,7 @@ module.exports = {
         var oldStyleNode = document.getElementById(id);
         var keepOldStyleNode = false;
 
-        // Create a new stylesheet node for insertion or (if necessary) replacement
+        // signUp a new stylesheet node for insertion or (if necessary) replacement
         var styleNode = document.createElement('style');
         styleNode.setAttribute('type', 'text/css');
         if (sheet.media) {
