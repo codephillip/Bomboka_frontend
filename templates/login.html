@@ -4,7 +4,7 @@
 
         <!-- header-top -->
         <div class="header-top">
-            <div class="container" style="padding: 22px;padding-bottom: 8px" >
+            <div class="container" style="padding: 22px;padding-bottom: 8px">
 
                 <ul class="hotline nav-left">
                     <li><span class="welcome">Bomboka</span><img src=""></li>
@@ -16,9 +16,12 @@
                         <input type="text" name="username" id="username-login-input" class="form-control"
                                ng-model="vm.username"
                                required=""/>
-                        <input class="form-control" type="password" placeholder="Password" name="password" ng-model="vm.password"
+                        <input class="form-control" type="password" placeholder="Password" name="password"
+                               ng-model="vm.password"
                                id="password-form-input" required="">
-                        <button style="height:34px;background-color: #1369c0;border-color: #fff;" type="submit" class="btn btn-inline">Login</button>
+                        <button style="height:34px;background-color: #1369c0;border-color: #fff;" type="submit"
+                                class="btn btn-inline">Login
+                        </button>
                     </form>
                 </ul>
             </div>
@@ -80,118 +83,72 @@
                 <div class="block-form-login">
                     <div class="block-form-registered" style="padding:0;">
                         <div class="block-content">
-                            <!--todo ########################################################-->
-                            <form  ng-submit="vm.register()">
-                                <style type="text/css">.block-form-login .form-control{max-width: 100%}</style>
+                            <form ng-submit="vm.register()">
+                                <style type="text/css">.block-form-login .form-control {
+                                    max-width: 100%
+                                }</style>
 
                                 <div class="panel with-nav-tabs panel-primary">
-                                    <!--  <div class="panel-heading"><span style="font-weight: 400;font-weight: bold;font-size: 16px">Sign Up / signUp Store</span></div> -->
-                                    <!-- <div class="panel-heading">
-                                            <ul class="nav nav-tabs">
-                                                <li class="active tab"><a href="#tab1primary" data-toggle="tab">Sign Up</a></li>
-                                                <li><a href="#tab2primary" data-toggle="tab">signUp Store</a></li>
-                                            </ul>
-                                    </div> -->
                                     <div class="panel-body">
                                         <div class="tab-content">
                                             <div class="tab-pane fade in active" id="tab1primary">
                                                 <div class="form-group">
-                                                    <!--<input type="file" class="form-control" ng-model="vm.user.image"/>-->
-                                                    <!--<input ng-model="photo"-->
-                                                           <!--onchange="angular.element(this).scope().file_changed(this)"-->
-                                                           <!--type="file" accept="image/*" />-->
-                                                    <!--<img src="images/banner/index1/banner3.jpg"-->
-                                                         <!--alt="Profile Image" type="file" ngf-select="uploadFiles($file, $invalidFiles, userctrl.data.key)"-->
-                                                         <!--accept="image/*" ngf-max-height="1000" ngf-max-size="5MB">-->
-                                                    <!--<input type="file" name="image" onchange="angular.element(this).scope().uploadedFile(this);" class="form-control" required ng-model="vm.user.image">-->
-                                                    <input
-                                                            data-file
-                                                            id="id_image" name="image"
-                                                            ng-model="my_image_model" type="file">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" placeholder="First Name" type="text" ng-model="vm.user.firstname">
+                                                    <input class="form-control" placeholder="User Name" type="text"
+                                                           ng-model="vm.user.username">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" placeholder="Last Name" type="text" ng-model="vm.user.lastname">
+                                                    <input class="form-control" placeholder="First Name" type="text"
+                                                           ng-model="vm.user.firstname">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" placeholder="Email Address" type="email" ng-model="vm.user.email">
+                                                    <input class="form-control" placeholder="Last Name" type="text"
+                                                           ng-model="vm.user.lastname">
                                                 </div>
-                                                <!-- Gender&nbsp;
-                                                <select data-placeholder="Gender" class="categori-search-option">
-                                                        <option value="M">Male<option>
-                                                        <option value="F">Female<option>
-                                                        <option value="O">Non<option>
-                                                </select><br /><br /> -->
+                                                <div class="form-group">
+                                                    <input class="form-control" placeholder="Email Address" type="email"
+                                                           ng-model="vm.user.email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input class="form-control" placeholder="Phone Number" type="number"
+                                                           ng-model="vm.user.phone">
+                                                </div>
+                                                <input
+                                                        data-file
+                                                        id="id_image" name="image"
+                                                        ng-model="my_image_model" type="file">
                                                 <p>Birthday</p>
-                                                <style type="text/css">
-                                                    .categori-search-option{width:80px;}
-                                                </style>
                                                 <div class="block-content" style="padding-bottom: 22px;">
                                                     <div class="categori-search  ">
-                                                        <input type="date" class="signup-input" ng-model="couctrl.startDate" ng-change="couctrl.onValueChange()" placeholder="Start Date" min="2017-01-01" max="2060-12-31">
+                                                        <input type="date" class="signup-input" ng-model="vm.user.dob"
+                                                               ng-change="couctrl.onValueChange()"
+                                                               format="dd/MM/yyyy"
+                                                               placeholder="Date of Birth" min="1930-01-01"
+                                                               max="2100-12-31">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="radio" name="gender" value="F">&nbsp;Female&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="M">&nbsp;Male
+                                                    <input type="radio" name="gender" value="1"
+                                                           ng-model="vm.user.gender">&nbsp;Female&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                        type="radio" name="gender" value="0" ng-model="vm.user.gender">&nbsp;Male
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" placeholder="Password" type="password">
+                                                    <input class="form-control" placeholder="Password" type="password"
+                                                           ng-model="vm.user.password">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" placeholder="Confirm Password" type="password">
+                                                    <input class="form-control" placeholder="Confirm Password"
+                                                           type="password" ng-model="vm.user.passwordConfirm">
                                                 </div>
-                                                <p>{{vm.user}}</p>
-                                                <button style="width: 100%;background: #9933FF;border-color: #fff;" type="submit" class="btn btn-inline">Sign Up</button>
-                                            </div><!-- end sign up -->
-
-                                            <!-- <div class="tab-pane fade" id="tab2primary">
-                                                <div class="form-group">
-                                                <input class="form-control" placeholder="Store Name" type="text">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input class="form-control" placeholder="Email Address" type="email">
-                                                </div>
-                                                <div class="form-group">
-                                                 <input class="form-control" placeholder="Password" type="password">
-                                                </div>
-                                                <div class="form-group">
-                                                     <input class="form-control" placeholder="Confirm Password" type="password">
-                                                </div>
-                                                <button style="width: 100%;background: #9933FF;border-color: #fff;" type="submit" class="btn btn-inline">signUp Store</button>
-                                            </div> -->
-                                            <!-- end create store -->
-                                            <!-- </div> -->
+                                                <button style="width: 100%;background: #9933FF;border-color: #fff;" class="btn btn-inline">Sign Up</button>
+                                            </div>
+                                            <!-- end sign up -->
                                         </div>
                                     </div>
 
                                 </div>
 
-                            </form>
-
-                            <!--todo $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
-
-                            <form name="form" ng-submit="userctrl.updateProfile()" role="form">
-                                <h2 id="signup-block-heading">Update Information</h2>
-                                <!--todo add error messages to each field-->
-                                <!--<span data-ng-show="form.firstName.$dirty && form.firstName.$error.required"-->
-                                <!--class="help-block">First name is required></span>-->
-                                <input type="text" placeholder="Full Name" ng-model="userctrl.data.fullnames" class="signup-input">
-                                <input type="text" placeholder="User Name" ng-model="userctrl.data.username" class="signup-input">
-                                <input type="text" placeholder="Email or Phone Number" class="signup-input" ng-model="userctrl.data.email">
-                                <input type="text" placeholder="Address" class="signup-input" ng-model="userctrl.data.address">
-
-                                <input type="date" class="signup-input" ng-model="userctrl.data.dob" placeholder="Date of Birth" min="1930-01-01" max="2030-12-31">
-                                <p>{{userctrl.data.dob}}</p>
-                                <input type="text" placeholder="Phone Number" class="signup-input" ng-model="userctrl.data.phoneNumber">
-                                <select class="login-select" ng-model="userctrl.data.sex">
-                                    <optgroup label="Sex">
-                                        <option value="Female" selected="">Female</option>
-                                        <option value="Male">Male</option>
-                                    </optgroup>
-                                </select>
-                                <button class="btn btn-success" type="submit" ng-disabled="form.$invalname || userctrl.dataLoading">Save</button>
                             </form>
                         </div>
 
@@ -228,19 +185,20 @@
                     <div class="item">
                         <div class="item-info">
                             <strong class="title">
-                                <a href="#"><img alt="title-hot-categori1" src="images/icon/index1/title-hot-categori1.png" >
+                                <a href="#"><img alt="title-hot-categori1"
+                                                 src="images/icon/index1/title-hot-categori1.png">
                                     <span>fashion</span></a>
                             </strong>
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <img alt="hot-categori1" src="images/media/index1/hot-categori1.jpg" >
+                                        <img alt="hot-categori1" src="images/media/index1/hot-categori1.jpg">
                                         <span>bags women</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img alt="hot-categori2" src="images/media/index1/hot-categori2.jpg" >
+                                        <img alt="hot-categori2" src="images/media/index1/hot-categori2.jpg">
                                         <span>Short Men</span>
                                     </a>
                                 </li>
@@ -250,19 +208,19 @@
                     <div class="item">
                         <div class="item-info">
                             <strong class="title">
-                                <a href="#"><img alt="hot-categori" src="images/icon/index1/title-hot-categori2.png" >
+                                <a href="#"><img alt="hot-categori" src="images/icon/index1/title-hot-categori2.png">
                                     <span>Electronics</span></a>
                             </strong>
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <img  alt="hot-categori" src="images/media/index1/hot-categori3.jpg" >
+                                        <img alt="hot-categori" src="images/media/index1/hot-categori3.jpg">
                                         <span>SamSung Ultral Shap</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img alt="hot-categori" src="images/media/index1/hot-categori4.jpg" >
+                                        <img alt="hot-categori" src="images/media/index1/hot-categori4.jpg">
                                         <span>Sony Hd Ultral 7.0</span>
                                     </a>
                                 </li>
@@ -272,19 +230,19 @@
                     <div class="item">
                         <div class="item-info">
                             <strong class="title">
-                                <a href="#"><img alt="hot-categori" src="images/icon/index1/title-hot-categori3.png" >
+                                <a href="#"><img alt="hot-categori" src="images/icon/index1/title-hot-categori3.png">
                                     <span>Accessories</span></a>
                             </strong>
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <img alt="hot-categori" src="images/media/index1/hot-categori5.jpg" >
+                                        <img alt="hot-categori" src="images/media/index1/hot-categori5.jpg">
                                         <span>gold necklace</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img alt="hot-categori" src="images/media/index1/hot-categori6.jpg" >
+                                        <img alt="hot-categori" src="images/media/index1/hot-categori6.jpg">
                                         <span>Diamon blue</span>
                                     </a>
                                 </li>
@@ -294,19 +252,19 @@
                     <div class="item">
                         <div class="item-info">
                             <strong class="title">
-                                <a href="#"><img alt="hot-categori" src="images/icon/index1/title-hot-categori4.png" >
+                                <a href="#"><img alt="hot-categori" src="images/icon/index1/title-hot-categori4.png">
                                     <span>Sport</span></a>
                             </strong>
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <img alt="hot-categori" src="images/media/index1/hot-categori7.jpg" >
+                                        <img alt="hot-categori" src="images/media/index1/hot-categori7.jpg">
                                         <span>Training Sport</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img alt="hot-categori" src="images/media/index1/hot-categori8.jpg" >
+                                        <img alt="hot-categori" src="images/media/index1/hot-categori8.jpg">
                                         <span>Sport Training men</span>
                                     </a>
                                 </li>
@@ -316,19 +274,19 @@
                     <div class="item">
                         <div class="item-info">
                             <strong class="title">
-                                <a href="#"><img alt="hot-categori" src="images/icon/index1/title-hot-categori5.png" >
+                                <a href="#"><img alt="hot-categori" src="images/icon/index1/title-hot-categori5.png">
                                     <span>SmartPhone</span></a>
                             </strong>
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <img alt="hot-categori" src="images/media/index1/hot-categori9.jpg" >
+                                        <img alt="hot-categori" src="images/media/index1/hot-categori9.jpg">
                                         <span>Samsung galaxy i7 </span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img  alt="hot-categori" src="images/media/index1/hot-categori10.jpg" >
+                                        <img alt="hot-categori" src="images/media/index1/hot-categori10.jpg">
                                         <span>Samsung galaxy pro</span>
                                     </a>
                                 </li>
@@ -346,14 +304,16 @@
                 <div class="block-title heading-opt-1">
                     <span class="title"><img src="images/media/index1/floor1.png" alt="floor">Electronics</span>
                     <ul class="links">
-                        <li role="presentation" class="active"><a href="#all1"  role="tab" data-toggle="tab">All Products</a></li>
-                        <li role="presentation"><a href="#Bestseller1"  role="tab" data-toggle="tab">Bestseller</a></li>
-                        <li role="presentation"><a href="#Most1"  role="tab" data-toggle="tab">Most reviews</a></li>
-                        <li role="presentation"><a href="#Specials1"  role="tab" data-toggle="tab">Specials</a></li>
+                        <li role="presentation" class="active"><a href="#all1" role="tab" data-toggle="tab">All
+                            Products</a></li>
+                        <li role="presentation"><a href="#Bestseller1" role="tab" data-toggle="tab">Bestseller</a></li>
+                        <li role="presentation"><a href="#Most1" role="tab" data-toggle="tab">Most reviews</a></li>
+                        <li role="presentation"><a href="#Specials1" role="tab" data-toggle="tab">Specials</a></li>
                     </ul>
                     <div class="actions">
                         <a href="#" class="action action-up"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-                        <a href="#floor1-2" class="action action-down"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <a href="#floor1-2" class="action action-down"><i class="fa fa-angle-down"
+                                                                          aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -363,7 +323,7 @@
                         <a href="#" class="img"><img src="images/media/index1/baner-floor1.jpg" alt="baner-floor"></a>
                         <div class="description">
                             <strong class="title"> Electric Kettle</strong>
-                            <div class="des">Super save electricity <br>  for every home</div>
+                            <div class="des">Super save electricity <br> for every home</div>
                             <a href="#" class="btn btn-default">shop now</a>
                         </div>
                     </div>
@@ -389,17 +349,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics1.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics1.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap HD </a></strong>
+                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap
+                                                    HD </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -407,56 +370,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics2.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics2.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Washing Machine Pro </a></strong>
+                                                <strong class="product-item-name"><a href="#">Washing Machine
+                                                    Pro </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics3.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electronics Machine Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics4.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung HSD Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -467,17 +394,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics5.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics3.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung Ultral Television </a></strong>
+                                                <strong class="product-item-name"><a href="#">Electronics Machine
+                                                    Pro </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -485,17 +415,65 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics6.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics4.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro Vesion</a></strong>
+                                                <strong class="product-item-name"><a href="#">SamSung HSD
+                                                    Television </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="product-item product-item-opt-1">
+                                        <div class="product-item-info">
+                                            <div class="product-item-photo">
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics5.jpg"></a>
+                                            </div>
+                                            <div class="product-item-detail">
+                                                <strong class="product-item-name"><a href="#">SamSung Ultral
+                                                    Television </a></strong>
+                                                <div class="product-item-price">
+                                                    <span class="price">$45.00</span>
+                                                </div>
+                                                <div class="product-item-actions">
+                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
+                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item product-item-opt-1">
+                                        <div class="product-item-info">
+                                            <div class="product-item-photo">
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics6.jpg"></a>
+                                            </div>
+                                            <div class="product-item-detail">
+                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro
+                                                    Vesion</a></strong>
+                                                <div class="product-item-price">
+                                                    <span class="price">$45.00</span>
+                                                </div>
+                                                <div class="product-item-actions">
+                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
+                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -524,17 +502,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics1.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics1.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap HD </a></strong>
+                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap
+                                                    HD </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -542,56 +523,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics2.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics2.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Washing Machine Pro </a></strong>
+                                                <strong class="product-item-name"><a href="#">Washing Machine
+                                                    Pro </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics3.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electronics Machine Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics4.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung HSD Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -602,17 +547,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics5.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics3.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung Ultral Television </a></strong>
+                                                <strong class="product-item-name"><a href="#">Electronics Machine
+                                                    Pro </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -620,17 +568,65 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics6.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics4.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro Vesion</a></strong>
+                                                <strong class="product-item-name"><a href="#">SamSung HSD
+                                                    Television </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="product-item product-item-opt-1">
+                                        <div class="product-item-info">
+                                            <div class="product-item-photo">
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics5.jpg"></a>
+                                            </div>
+                                            <div class="product-item-detail">
+                                                <strong class="product-item-name"><a href="#">SamSung Ultral
+                                                    Television </a></strong>
+                                                <div class="product-item-price">
+                                                    <span class="price">$45.00</span>
+                                                </div>
+                                                <div class="product-item-actions">
+                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
+                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item product-item-opt-1">
+                                        <div class="product-item-info">
+                                            <div class="product-item-photo">
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics6.jpg"></a>
+                                            </div>
+                                            <div class="product-item-detail">
+                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro
+                                                    Vesion</a></strong>
+                                                <div class="product-item-price">
+                                                    <span class="price">$45.00</span>
+                                                </div>
+                                                <div class="product-item-actions">
+                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
+                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -660,17 +656,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics1.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics1.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap HD </a></strong>
+                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap
+                                                    HD </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -678,56 +677,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics2.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics2.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Washing Machine Pro </a></strong>
+                                                <strong class="product-item-name"><a href="#">Washing Machine
+                                                    Pro </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics3.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electronics Machine Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics4.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung HSD Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -738,17 +701,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics5.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics3.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung Ultral Television </a></strong>
+                                                <strong class="product-item-name"><a href="#">Electronics Machine
+                                                    Pro </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -756,17 +722,65 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics6.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics4.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro Vesion</a></strong>
+                                                <strong class="product-item-name"><a href="#">SamSung HSD
+                                                    Television </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="product-item product-item-opt-1">
+                                        <div class="product-item-info">
+                                            <div class="product-item-photo">
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics5.jpg"></a>
+                                            </div>
+                                            <div class="product-item-detail">
+                                                <strong class="product-item-name"><a href="#">SamSung Ultral
+                                                    Television </a></strong>
+                                                <div class="product-item-price">
+                                                    <span class="price">$45.00</span>
+                                                </div>
+                                                <div class="product-item-actions">
+                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
+                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item product-item-opt-1">
+                                        <div class="product-item-info">
+                                            <div class="product-item-photo">
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics6.jpg"></a>
+                                            </div>
+                                            <div class="product-item-detail">
+                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro
+                                                    Vesion</a></strong>
+                                                <div class="product-item-price">
+                                                    <span class="price">$45.00</span>
+                                                </div>
+                                                <div class="product-item-actions">
+                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
+                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -796,17 +810,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics1.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics1.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap HD </a></strong>
+                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap
+                                                    HD </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -814,56 +831,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics2.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics2.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Washing Machine Pro </a></strong>
+                                                <strong class="product-item-name"><a href="#">Washing Machine
+                                                    Pro </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics3.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electronics Machine Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics4.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung HSD Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -874,17 +855,20 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics5.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics3.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung Ultral Television </a></strong>
+                                                <strong class="product-item-name"><a href="#">Electronics Machine
+                                                    Pro </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -892,17 +876,65 @@
                                     <div class="product-item product-item-opt-1">
                                         <div class="product-item-info">
                                             <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/electronics6.jpg"></a>
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics4.jpg"></a>
                                             </div>
                                             <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro Vesion</a></strong>
+                                                <strong class="product-item-name"><a href="#">SamSung HSD
+                                                    Television </a></strong>
                                                 <div class="product-item-price">
                                                     <span class="price">$45.00</span>
                                                 </div>
                                                 <div class="product-item-actions">
                                                     <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                     <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="product-item product-item-opt-1">
+                                        <div class="product-item-info">
+                                            <div class="product-item-photo">
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics5.jpg"></a>
+                                            </div>
+                                            <div class="product-item-detail">
+                                                <strong class="product-item-name"><a href="#">SamSung Ultral
+                                                    Television </a></strong>
+                                                <div class="product-item-price">
+                                                    <span class="price">$45.00</span>
+                                                </div>
+                                                <div class="product-item-actions">
+                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
+                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-item product-item-opt-1">
+                                        <div class="product-item-info">
+                                            <div class="product-item-photo">
+                                                <a class="product-item-img" href="#"><img alt="product name"
+                                                                                          src="images/media/index1/electronics6.jpg"></a>
+                                            </div>
+                                            <div class="product-item-detail">
+                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro
+                                                    Vesion</a></strong>
+                                                <div class="product-item-price">
+                                                    <span class="price">$45.00</span>
+                                                </div>
+                                                <div class="product-item-actions">
+                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
+                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
+                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -913,7 +945,8 @@
                     </div>
 
                     <div class="col-featured">
-                        <span class="label-featured"><img src="images/icon/index1/label-featured.png" alt="label-featured"></span>
+                        <span class="label-featured"><img src="images/icon/index1/label-featured.png"
+                                                          alt="label-featured"></span>
                         <div class="owl-carousel"
                              data-nav="true"
                              data-dots="false"
@@ -929,7 +962,8 @@
                                 <div class="product-item product-item-opt-1">
                                     <div class="product-item-info">
                                         <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/featured-electronics1.jpg"></a>
+                                            <a class="product-item-img" href="#"><img alt="product name"
+                                                                                      src="images/media/index1/featured-electronics1.jpg"></a>
                                         </div>
                                         <div class="product-item-detail">
                                             <strong class="product-item-name"><a href="#">Asus Ispiron 20</a></strong>
@@ -939,7 +973,8 @@
                                             <div class="product-item-actions">
                                                 <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                 <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -947,17 +982,20 @@
                                 <div class="product-item product-item-opt-1">
                                     <div class="product-item-info">
                                         <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/featured-electronics2.jpg"></a>
+                                            <a class="product-item-img" href="#"><img alt="product name"
+                                                                                      src="images/media/index1/featured-electronics2.jpg"></a>
                                         </div>
                                         <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Electronics Ispiron 20 </a></strong>
+                                            <strong class="product-item-name"><a href="#">Electronics Ispiron
+                                                20 </a></strong>
                                             <div class="product-item-price">
                                                 <span class="price">$45.00</span>
                                             </div>
                                             <div class="product-item-actions">
                                                 <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                 <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -965,17 +1003,20 @@
                                 <div class="product-item product-item-opt-1">
                                     <div class="product-item-info">
                                         <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/featured-electronics3.jpg"></a>
+                                            <a class="product-item-img" href="#"><img alt="product name"
+                                                                                      src="images/media/index1/featured-electronics3.jpg"></a>
                                         </div>
                                         <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Samsung Ispiron 20 </a></strong>
+                                            <strong class="product-item-name"><a href="#">Samsung Ispiron
+                                                20 </a></strong>
                                             <div class="product-item-price">
                                                 <span class="price">$45.00</span>
                                             </div>
                                             <div class="product-item-actions">
                                                 <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                 <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -985,7 +1026,8 @@
                                 <div class="product-item product-item-opt-1">
                                     <div class="product-item-info">
                                         <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/featured-electronics1.jpg"></a>
+                                            <a class="product-item-img" href="#"><img alt="product name"
+                                                                                      src="images/media/index1/featured-electronics1.jpg"></a>
                                         </div>
                                         <div class="product-item-detail">
                                             <strong class="product-item-name"><a href="#">Asus Ispiron 20</a></strong>
@@ -995,7 +1037,8 @@
                                             <div class="product-item-actions">
                                                 <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                 <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -1003,17 +1046,20 @@
                                 <div class="product-item product-item-opt-1">
                                     <div class="product-item-info">
                                         <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/featured-electronics2.jpg"></a>
+                                            <a class="product-item-img" href="#"><img alt="product name"
+                                                                                      src="images/media/index1/featured-electronics2.jpg"></a>
                                         </div>
                                         <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Electronics Ispiron 20 </a></strong>
+                                            <strong class="product-item-name"><a href="#">Electronics Ispiron
+                                                20 </a></strong>
                                             <div class="product-item-price">
                                                 <span class="price">$45.00</span>
                                             </div>
                                             <div class="product-item-actions">
                                                 <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                 <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -1021,17 +1067,20 @@
                                 <div class="product-item product-item-opt-1">
                                     <div class="product-item-info">
                                         <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name" src="images/media/index1/featured-electronics3.jpg"></a>
+                                            <a class="product-item-img" href="#"><img alt="product name"
+                                                                                      src="images/media/index1/featured-electronics3.jpg"></a>
                                         </div>
                                         <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Samsung Ispiron 20 </a></strong>
+                                            <strong class="product-item-name"><a href="#">Samsung Ispiron
+                                                20 </a></strong>
                                             <div class="product-item-price">
                                                 <span class="price">$45.00</span>
                                             </div>
                                             <div class="product-item-actions">
                                                 <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
                                                 <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span></button>
+                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

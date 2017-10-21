@@ -20,20 +20,23 @@
 
         return service;
 
+        function formatDate(user) {
+            return user.dob.toISOString().substring(0, 10);
+        }
+
         function signUp(user) {
             console.log("signing up");
             console.log(user);
-            //todo compare emails and passwords
             var data = {
-                "username": "testuser1",
-                "first_name": generateRandomString(),
-                "last_name": generateRandomString(),
-                "dob": "2017-08-21",
-                "password": "password123",
+                "username": user.username,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "dob": formatDate(user),
+                "password": user.password,
                 "gender": 0,
-                "email": "testuser@example.com",
+                "email": user.email,
                 "image": user.image,
-                "phone": "256756767678"
+                "phone": user.phone
             };
             var fd = new FormData();
             console.log("form: ", fd);
