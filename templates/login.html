@@ -303,31 +303,22 @@
         <div class="block-floor-products  block-floor-products-opt1 block-floor-1" id="floor1-1">
             <div class="container">
                 <div class="block-title heading-opt-1">
-                    <span class="title"><img src="images/media/index1/floor1.png" alt="floor">Electronics</span>
-                    <ul class="links">
-                        <li role="presentation" class="active"><a href="#all1" role="tab" data-toggle="tab">All
-                            Products</a></li>
-                    </ul>
-                    <div class="actions">
-                        <a href="#" class="action action-up"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-                        <a href="#floor1-2" class="action action-down"><i class="fa fa-angle-down"
-                                                                          aria-hidden="true"></i></a>
-                    </div>
+                    <span class="title"><img src="images/media/index1/floor1.png" alt="floor">Top Products</span>
                 </div>
 
                 <div class="block-content">
 
-                    <div class="col-banner">
-                        <a href="#" class="img"><img src="images/media/index1/baner-floor1.jpg" alt="baner-floor"></a>
-                        <div class="description">
-                            <strong class="title"> Electric Kettle</strong>
-                            <div class="des">Super save electricity <br> for every home</div>
-                            <a href="#" class="btn btn-default">shop now</a>
-                        </div>
-                    </div>
+                    <!--<div class="col-banner">-->
+                        <!--<a href="#" class="img"><img src="images/media/index1/baner-floor1.jpg" alt="baner-floor"></a>-->
+                        <!--<div class="description">-->
+                            <!--<strong class="title"> Electric Kettle</strong>-->
+                            <!--<div class="des">Super save electricity <br> for every home</div>-->
+                            <!--<a href="#" class="btn btn-default">shop now</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
                     <div class="row">
-                        <div class="col-md-4" ng-repeat="prod in vm.data.results">
+                        <div class="col-md-3" ng-repeat="prod in vm.data.results">
                             <a href="#">
                                 <div class="thumbnail" >
                                     <!--todo replace image url with a base url-->
@@ -339,157 +330,6 @@
                             </a>
                         </div>
 
-                    </div>
-
-                    <div class="col-products ">
-
-                        <!-- tab content All Products -->
-                        <div class="box-tab active in  fade " id="all1" role="tabpanel">
-                            <div class="owl-carousel"
-                                 data-nav="true"
-                                 data-dots="false"
-                                 data-margin="0"
-                                 data-responsive='{
-                                    "0":{"items":1},
-                                    "420":{"items":2},
-                                    "600":{"items":3},
-                                    "768":{"items":3},
-                                    "992":{"items":3},
-                                    "1200":{"items":3}
-                                }'>
-
-                                <!--<div class="item" ng-repeat="prod in vm.data.results">-->
-                                    <!--<div class="product-item product-item-opt-1">-->
-                                        <!--<div class="product-item-info">-->
-                                            <!--<div class="product-item-photo">-->
-                                                <!--<a class="product-item-img" href="#"><img ng-src="{{prod.image | formatImage}}" width="50" height="50"></a>-->
-                                            <!--</div>-->
-                                            <!--<div class="product-item-detail">-->
-                                                <!--<strong class="product-item-name"><a href="#">{{prod.name}}</a></strong>-->
-                                                <!--&lt;!&ndash;<div class="product-item-actions">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<a class="btn btn-compare" href="#"><span>compare</span></a>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<button type="button" class="btn btn-cart"><span>Add to Cart</span>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--&lt;!&ndash;<div class="product-item product-item-opt-1">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<div class="product-item-info">&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<div class="product-item-photo">&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<a class="product-item-img" href="#"><img alt="product name"&ndash;&gt;-->
-                                                                                          <!--&lt;!&ndash;src="images/media/index1/electronics2.jpg"></a>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<div class="product-item-detail">&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<strong class="product-item-name"><a href="#">Washing Machine&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;Pro </a></strong>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div class="product-item-price">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<span class="price">$45.00</span>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;<div class="product-item-actions">&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<a class="btn btn-compare" href="#"><span>compare</span></a>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;<button type="button" class="btn btn-cart"><span>Add to Cart</span>&ndash;&gt;-->
-                                                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
-                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--</div>-->
-
-                                <!--<div class="item">-->
-                                    <!--<div class="product-item product-item-opt-1">-->
-                                        <!--<div class="product-item-info">-->
-                                            <!--<div class="product-item-photo">-->
-                                                <!--<a class="product-item-img" href="#"><img alt="product name"-->
-                                                                                          <!--src="images/media/index1/electronics3.jpg"></a>-->
-                                            <!--</div>-->
-                                            <!--<div class="product-item-detail">-->
-                                                <!--<strong class="product-item-name"><a href="#">Electronics Machine-->
-                                                    <!--Pro </a></strong>-->
-                                                <!--<div class="product-item-price">-->
-                                                    <!--<span class="price">$45.00</span>-->
-                                                <!--</div>-->
-                                                <!--<div class="product-item-actions">-->
-                                                    <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
-                                                    <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
-                                                    <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
-                                                    <!--</button>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="product-item product-item-opt-1">-->
-                                        <!--<div class="product-item-info">-->
-                                            <!--<div class="product-item-photo">-->
-                                                <!--<a class="product-item-img" href="#"><img alt="product name"-->
-                                                                                          <!--src="images/media/index1/electronics4.jpg"></a>-->
-                                            <!--</div>-->
-                                            <!--<div class="product-item-detail">-->
-                                                <!--<strong class="product-item-name"><a href="#">SamSung HSD-->
-                                                    <!--Television </a></strong>-->
-                                                <!--<div class="product-item-price">-->
-                                                    <!--<span class="price">$45.00</span>-->
-                                                <!--</div>-->
-                                                <!--<div class="product-item-actions">-->
-                                                    <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
-                                                    <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
-                                                    <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
-                                                    <!--</button>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
-                                <!--<div class="item">-->
-                                    <!--<div class="product-item product-item-opt-1">-->
-                                        <!--<div class="product-item-info">-->
-                                            <!--<div class="product-item-photo">-->
-                                                <!--<a class="product-item-img" href="#"><img alt="product name"-->
-                                                                                          <!--src="images/media/index1/electronics5.jpg"></a>-->
-                                            <!--</div>-->
-                                            <!--<div class="product-item-detail">-->
-                                                <!--<strong class="product-item-name"><a href="#">SamSung Ultral-->
-                                                    <!--Television </a></strong>-->
-                                                <!--<div class="product-item-price">-->
-                                                    <!--<span class="price">$45.00</span>-->
-                                                <!--</div>-->
-                                                <!--<div class="product-item-actions">-->
-                                                    <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
-                                                    <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
-                                                    <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
-                                                    <!--</button>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="product-item product-item-opt-1">-->
-                                        <!--<div class="product-item-info">-->
-                                            <!--<div class="product-item-photo">-->
-                                                <!--<a class="product-item-img" href="#"><img alt="product name"-->
-                                                                                          <!--src="images/media/index1/electronics6.jpg"></a>-->
-                                            <!--</div>-->
-                                            <!--<div class="product-item-detail">-->
-                                                <!--<strong class="product-item-name"><a href="#">Electrolux 6.0 Pro-->
-                                                    <!--Vesion</a></strong>-->
-                                                <!--<div class="product-item-price">-->
-                                                    <!--<span class="price">$45.00</span>-->
-                                                <!--</div>-->
-                                                <!--<div class="product-item-actions">-->
-                                                    <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
-                                                    <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
-                                                    <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
-                                                    <!--</button>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
-                            </div>
-                        </div>
                     </div>
 
                     <!--<div class="col-featured">-->

@@ -22,6 +22,7 @@
         loadCartItems();
         function loadCartItems() {
             var keys = localStorageService.keys();
+
             cartctrl.cartProducts = [];
             for (var i = 0; i <= keys.length; i++) {
                 try {

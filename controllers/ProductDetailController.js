@@ -16,8 +16,9 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
     function toggleAddToCartButton() {
         var keys = localStorageService.keys();
         for (var i = 0; i <= keys.length; i++) {
+            console.log(localStorageService.get(keys[i]));
             try {
-                if (pdctrl.data.key == localStorageService.get(keys[i]).key) {
+                if (pdctrl.data.id == localStorageService.get(keys[i]).id) {
                     pdctrl.isVisible = false;
                 }
             } catch (err) {

@@ -18,8 +18,7 @@
             <div class="close1"></div>
             <div>
                 <ul ng-repeat="product in cartctrl.cartProducts">
-                    <li class="ring-in"><a href="single.html"><img
-                            ng-src="http://127.0.0.1:9000/fetch_image_file/product_image/{{product.images[0]}}"
+                    <li class="ring-in"><a href="single.html"><img ng-src="{{product.image | formatImage}}"
                             class="img-responsive"
                             alt=""></a>
                     </li>
@@ -42,6 +41,8 @@
                 </ul>
 
                 <p>GRAND TOTAL: UGX {{cartctrl.getGrandtotal()}}</p>
+
+                <a href="#" class="btn btn-danger add-to-cart-btn">Check out</a>
             </div>
 
             <div class="clearfix"></div>
