@@ -53,25 +53,6 @@
                 console.log('response ::::',response.data);
                 return response.data;
             });
-
-            // return $http({
-            //     url: 'http://127.0.0.1:8000/auth/register/',
-            //     method: "POST",
-            //     data: JSON.stringify(data),
-            //         transformRequest:angular.identity,
-            //         headers: {'Content-Type': undefined}
-            //     // headers: {'Content-Type': 'charset=utf-8'}
-            //
-            // }).then(function (response) {
-            //         // success
-            //         console.log("Successfully signed up");
-            //         $location.path("home");
-            //     },
-            //     function (response) { // optional
-            //         // failed
-            //         console.log("Failed to signed up");
-            //         console.log(response.data);
-            //     });
         }
 
         function getById(userId) {
@@ -103,16 +84,35 @@
             var dateOfBirth = user.dob;
             console.log(angular.isDate(dateOfBirth));
             console.log(angular.isString(dateOfBirth));
-            var userObject = {
-                'fullnames': user.fullnames,
-                'username': user.username,
-                'address': user.address,
-                'email': user.email,
-                'phoneNumber': user.phoneNumber,
-                'sex': user.sex,
-                'dob': dateOfBirth
+            var data = {
+                "username": user.username,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "dob": formatDate(user),
+                "password": user.password,
+                "gender": user.gender,
+                "email": user.email,
+                "image": user.image,
+                "phone": user.phone
             };
-            return $http.post('http://localhost:9000/api/users/edit/' + user.key, userObject);
+
+            var fd = new FormData();
+            console.log("form: ", fd);
+            for(var value in data) {
+                console.log(value, data[value]);
+                fd.append(value, data[value])
+            }
+
+            console.log("form2: ", fd);
+
+            var uploadUrl = 'http://127.0.0.1:8000/auth/testtest';
+            return $http.post(uploadUrl, fd, {
+                transformRequest:angular.identity,
+                headers: {'Content-Type': undefined}
+            }).then(function (response) {
+                console.log('response ::::',response.data);
+                return response.data;
+            });
         }
     }
 
