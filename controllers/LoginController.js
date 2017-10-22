@@ -3,11 +3,12 @@
     angular.module('bomboka')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['UserService', '$location', '$cookies', '$rootScope', '$http', 'AuthenticationService', 'FlashService', 'localStorageService', 'Upload', '$scope'];
-    function LoginController(UserService, $location, $cookies, $rootScope, $http, AuthenticationService, FlashService, localStorageService, Upload, $scope) {
+    LoginController.$inject = ['UserService', '$location', '$cookies', '$rootScope', '$http', 'AuthenticationService', 'FlashService', 'localStorageService', 'Upload', '$scope', 'ProductService'];
+    function LoginController(UserService, $location, $cookies, $rootScope, $http, AuthenticationService, FlashService, localStorageService, Upload, $scope, ProductService) {
         var vm = this;
         vm.login = login;
         vm.register = register;
+        vm.displayProducts = displayProducts;
 
         (function initController() {
             // reset login status
@@ -96,6 +97,17 @@
                 // TODO SHOW ERROR MESSAGE
                 console.log("password mismatch");
             }
+        }
+
+        displayProducts();
+        function displayProducts() {
+            //todo extract shop_id and pass it to this method
+            ProductService.GetAll()
+                .then(function success(response) {
+                    vm.data = response.data;
+                }, function failure(error) {
+                    console.log("Server Connection Error", error);
+                });
         }
     }
 })();

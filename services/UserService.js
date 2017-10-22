@@ -33,7 +33,7 @@
                 "last_name": user.last_name,
                 "dob": formatDate(user),
                 "password": user.password,
-                "gender": 0,
+                "gender": user.gender,
                 "email": user.email,
                 "image": user.image,
                 "phone": user.phone

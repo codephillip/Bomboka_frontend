@@ -6,6 +6,7 @@ function ProductDetailController(ProductService, $location, $stateParams, $cooki
     var pdctrl = this;
 
     pdctrl.data = $stateParams.productObject;
+    console.log("product details: ", pdctrl.data);
     pdctrl.isVisible = true;
 
     //todo remove on release

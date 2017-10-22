@@ -23,6 +23,7 @@
                                 class="btn btn-inline">Login
                         </button>
                     </form>
+                    <a href="http://127.0.0.1:8000/password_reset/" style="color: white">Forgot Password?</a>
                 </ul>
             </div>
         </div>
@@ -306,9 +307,6 @@
                     <ul class="links">
                         <li role="presentation" class="active"><a href="#all1" role="tab" data-toggle="tab">All
                             Products</a></li>
-                        <li role="presentation"><a href="#Bestseller1" role="tab" data-toggle="tab">Bestseller</a></li>
-                        <li role="presentation"><a href="#Most1" role="tab" data-toggle="tab">Most reviews</a></li>
-                        <li role="presentation"><a href="#Specials1" role="tab" data-toggle="tab">Specials</a></li>
                     </ul>
                     <div class="actions">
                         <a href="#" class="action action-up"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
@@ -328,6 +326,21 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-4" ng-repeat="prod in vm.data.results">
+                            <a href="#">
+                                <div class="thumbnail" >
+                                    <!--todo replace image url with a base url-->
+                                    <img ng-src="{{prod.image | formatImage}}" width="120" height="120">
+                                    <div class="thumbnail-desc">
+                                        <p class="thumbnail-paragraph">{{prod.name}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
                     <div class="col-products ">
 
                         <!-- tab content All Products -->
@@ -345,748 +358,283 @@
                                     "1200":{"items":3}
                                 }'>
 
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics1.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap
-                                                    HD </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics2.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Washing Machine
-                                                    Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--<div class="item" ng-repeat="prod in vm.data.results">-->
+                                    <!--<div class="product-item product-item-opt-1">-->
+                                        <!--<div class="product-item-info">-->
+                                            <!--<div class="product-item-photo">-->
+                                                <!--<a class="product-item-img" href="#"><img ng-src="{{prod.image | formatImage}}" width="50" height="50"></a>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-detail">-->
+                                                <!--<strong class="product-item-name"><a href="#">{{prod.name}}</a></strong>-->
+                                                <!--&lt;!&ndash;<div class="product-item-actions">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<a class="btn btn-compare" href="#"><span>compare</span></a>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<button type="button" class="btn btn-cart"><span>Add to Cart</span>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<div class="product-item product-item-opt-1">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="product-item-info">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="product-item-photo">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<a class="product-item-img" href="#"><img alt="product name"&ndash;&gt;-->
+                                                                                          <!--&lt;!&ndash;src="images/media/index1/electronics2.jpg"></a>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="product-item-detail">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<strong class="product-item-name"><a href="#">Washing Machine&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;Pro </a></strong>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="product-item-price">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<span class="price">$45.00</span>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="product-item-actions">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<a class="btn btn-compare" href="#"><span>compare</span></a>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<button type="button" class="btn btn-cart"><span>Add to Cart</span>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--</div>-->
 
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics3.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electronics Machine
-                                                    Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics4.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung HSD
-                                                    Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--<div class="item">-->
+                                    <!--<div class="product-item product-item-opt-1">-->
+                                        <!--<div class="product-item-info">-->
+                                            <!--<div class="product-item-photo">-->
+                                                <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                          <!--src="images/media/index1/electronics3.jpg"></a>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-detail">-->
+                                                <!--<strong class="product-item-name"><a href="#">Electronics Machine-->
+                                                    <!--Pro </a></strong>-->
+                                                <!--<div class="product-item-price">-->
+                                                    <!--<span class="price">$45.00</span>-->
+                                                <!--</div>-->
+                                                <!--<div class="product-item-actions">-->
+                                                    <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                    <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                    <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                    <!--</button>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="product-item product-item-opt-1">-->
+                                        <!--<div class="product-item-info">-->
+                                            <!--<div class="product-item-photo">-->
+                                                <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                          <!--src="images/media/index1/electronics4.jpg"></a>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-detail">-->
+                                                <!--<strong class="product-item-name"><a href="#">SamSung HSD-->
+                                                    <!--Television </a></strong>-->
+                                                <!--<div class="product-item-price">-->
+                                                    <!--<span class="price">$45.00</span>-->
+                                                <!--</div>-->
+                                                <!--<div class="product-item-actions">-->
+                                                    <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                    <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                    <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                    <!--</button>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics5.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung Ultral
-                                                    Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics6.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro
-                                                    Vesion</a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--<div class="item">-->
+                                    <!--<div class="product-item product-item-opt-1">-->
+                                        <!--<div class="product-item-info">-->
+                                            <!--<div class="product-item-photo">-->
+                                                <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                          <!--src="images/media/index1/electronics5.jpg"></a>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-detail">-->
+                                                <!--<strong class="product-item-name"><a href="#">SamSung Ultral-->
+                                                    <!--Television </a></strong>-->
+                                                <!--<div class="product-item-price">-->
+                                                    <!--<span class="price">$45.00</span>-->
+                                                <!--</div>-->
+                                                <!--<div class="product-item-actions">-->
+                                                    <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                    <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                    <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                    <!--</button>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="product-item product-item-opt-1">-->
+                                        <!--<div class="product-item-info">-->
+                                            <!--<div class="product-item-photo">-->
+                                                <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                          <!--src="images/media/index1/electronics6.jpg"></a>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-detail">-->
+                                                <!--<strong class="product-item-name"><a href="#">Electrolux 6.0 Pro-->
+                                                    <!--Vesion</a></strong>-->
+                                                <!--<div class="product-item-price">-->
+                                                    <!--<span class="price">$45.00</span>-->
+                                                <!--</div>-->
+                                                <!--<div class="product-item-actions">-->
+                                                    <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                    <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                    <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                    <!--</button>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                            </div>
-                        </div>
-
-                        <!-- tab content Bestseller-->
-                        <div class="box-tab fade " id="Bestseller1" role="tabpanel">
-                            <div class="owl-carousel"
-                                 data-nav="true"
-                                 data-dots="false"
-                                 data-margin="0"
-                                 data-responsive='{
-                                    "0":{"items":1},
-                                    "420":{"items":2},
-                                    "600":{"items":3},
-                                    "768":{"items":3},
-                                    "992":{"items":3},
-                                    "1200":{"items":3}
-                                }'>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics1.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap
-                                                    HD </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics2.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Washing Machine
-                                                    Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics3.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electronics Machine
-                                                    Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics4.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung HSD
-                                                    Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics5.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung Ultral
-                                                    Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics6.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro
-                                                    Vesion</a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <!-- tab content Most reviews -->
-                        <div class="box-tab fade " id="Most1" role="tabpanel">
-                            <div class="owl-carousel"
-                                 data-nav="true"
-                                 data-dots="false"
-                                 data-margin="0"
-                                 data-responsive='{
-                                    "0":{"items":1},
-                                    "420":{"items":2},
-                                    "600":{"items":3},
-                                    "768":{"items":3},
-                                    "992":{"items":3},
-                                    "1200":{"items":3}
-                                }'>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics1.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap
-                                                    HD </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics2.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Washing Machine
-                                                    Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics3.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electronics Machine
-                                                    Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics4.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung HSD
-                                                    Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics5.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung Ultral
-                                                    Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics6.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro
-                                                    Vesion</a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <!-- tab content Specials -->
-                        <div class="box-tab fade " id="Specials1" role="tabpanel">
-                            <div class="owl-carousel"
-                                 data-nav="true"
-                                 data-dots="false"
-                                 data-margin="0"
-                                 data-responsive='{
-                                    "0":{"items":1},
-                                    "420":{"items":2},
-                                    "600":{"items":3},
-                                    "768":{"items":3},
-                                    "992":{"items":3},
-                                    "1200":{"items":3}
-                                }'>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics1.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Sony Ultral Shap
-                                                    HD </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics2.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Washing Machine
-                                                    Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics3.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electronics Machine
-                                                    Pro </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics4.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung HSD
-                                                    Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics5.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">SamSung Ultral
-                                                    Television </a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-item product-item-opt-1">
-                                        <div class="product-item-info">
-                                            <div class="product-item-photo">
-                                                <a class="product-item-img" href="#"><img alt="product name"
-                                                                                          src="images/media/index1/electronics6.jpg"></a>
-                                            </div>
-                                            <div class="product-item-detail">
-                                                <strong class="product-item-name"><a href="#">Electrolux 6.0 Pro
-                                                    Vesion</a></strong>
-                                                <div class="product-item-price">
-                                                    <span class="price">$45.00</span>
-                                                </div>
-                                                <div class="product-item-actions">
-                                                    <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                    <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                    <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-featured">
-                        <span class="label-featured"><img src="images/icon/index1/label-featured.png"
-                                                          alt="label-featured"></span>
-                        <div class="owl-carousel"
-                             data-nav="true"
-                             data-dots="false"
-                             data-margin="0"
-                             data-responsive='{
-                                "0":{"items":1},
-                                "380":{"items":2},
-                                "480":{"items":2},
-                                "600":{"items":1},
-                                "992":{"items":1}
-                                }'>
-                            <div class="item">
-                                <div class="product-item product-item-opt-1">
-                                    <div class="product-item-info">
-                                        <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name"
-                                                                                      src="images/media/index1/featured-electronics1.jpg"></a>
-                                        </div>
-                                        <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Asus Ispiron 20</a></strong>
-                                            <div class="product-item-price">
-                                                <span class="price">$45.00</span>
-                                            </div>
-                                            <div class="product-item-actions">
-                                                <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item product-item-opt-1">
-                                    <div class="product-item-info">
-                                        <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name"
-                                                                                      src="images/media/index1/featured-electronics2.jpg"></a>
-                                        </div>
-                                        <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Electronics Ispiron
-                                                20 </a></strong>
-                                            <div class="product-item-price">
-                                                <span class="price">$45.00</span>
-                                            </div>
-                                            <div class="product-item-actions">
-                                                <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item product-item-opt-1">
-                                    <div class="product-item-info">
-                                        <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name"
-                                                                                      src="images/media/index1/featured-electronics3.jpg"></a>
-                                        </div>
-                                        <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Samsung Ispiron
-                                                20 </a></strong>
-                                            <div class="product-item-price">
-                                                <span class="price">$45.00</span>
-                                            </div>
-                                            <div class="product-item-actions">
-                                                <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-item product-item-opt-1">
-                                    <div class="product-item-info">
-                                        <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name"
-                                                                                      src="images/media/index1/featured-electronics1.jpg"></a>
-                                        </div>
-                                        <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Asus Ispiron 20</a></strong>
-                                            <div class="product-item-price">
-                                                <span class="price">$45.00</span>
-                                            </div>
-                                            <div class="product-item-actions">
-                                                <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item product-item-opt-1">
-                                    <div class="product-item-info">
-                                        <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name"
-                                                                                      src="images/media/index1/featured-electronics2.jpg"></a>
-                                        </div>
-                                        <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Electronics Ispiron
-                                                20 </a></strong>
-                                            <div class="product-item-price">
-                                                <span class="price">$45.00</span>
-                                            </div>
-                                            <div class="product-item-actions">
-                                                <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item product-item-opt-1">
-                                    <div class="product-item-info">
-                                        <div class="product-item-photo">
-                                            <a class="product-item-img" href="#"><img alt="product name"
-                                                                                      src="images/media/index1/featured-electronics3.jpg"></a>
-                                        </div>
-                                        <div class="product-item-detail">
-                                            <strong class="product-item-name"><a href="#">Samsung Ispiron
-                                                20 </a></strong>
-                                            <div class="product-item-price">
-                                                <span class="price">$45.00</span>
-                                            </div>
-                                            <div class="product-item-actions">
-                                                <a class="btn btn-wishlist" href="#"><span>wishlist</span></a>
-                                                <a class="btn btn-compare" href="#"><span>compare</span></a>
-                                                <button type="button" class="btn btn-cart"><span>Add to Cart</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <!--<div class="col-featured">-->
+                        <!--<span class="label-featured"><img src="images/icon/index1/label-featured.png"-->
+                                                          <!--alt="label-featured"></span>-->
+                        <!--<div class="owl-carousel"-->
+                             <!--data-nav="true"-->
+                             <!--data-dots="false"-->
+                             <!--data-margin="0"-->
+                             <!--data-responsive='{-->
+                                <!--"0":{"items":1},-->
+                                <!--"380":{"items":2},-->
+                                <!--"480":{"items":2},-->
+                                <!--"600":{"items":1},-->
+                                <!--"992":{"items":1}-->
+                                <!--}'>-->
+                            <!--<div class="item">-->
+                                <!--<div class="product-item product-item-opt-1">-->
+                                    <!--<div class="product-item-info">-->
+                                        <!--<div class="product-item-photo">-->
+                                            <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                      <!--src="images/media/index1/featured-electronics1.jpg"></a>-->
+                                        <!--</div>-->
+                                        <!--<div class="product-item-detail">-->
+                                            <!--<strong class="product-item-name"><a href="#">Asus Ispiron 20</a></strong>-->
+                                            <!--<div class="product-item-price">-->
+                                                <!--<span class="price">$45.00</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-actions">-->
+                                                <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="product-item product-item-opt-1">-->
+                                    <!--<div class="product-item-info">-->
+                                        <!--<div class="product-item-photo">-->
+                                            <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                      <!--src="images/media/index1/featured-electronics2.jpg"></a>-->
+                                        <!--</div>-->
+                                        <!--<div class="product-item-detail">-->
+                                            <!--<strong class="product-item-name"><a href="#">Electronics Ispiron-->
+                                                <!--20 </a></strong>-->
+                                            <!--<div class="product-item-price">-->
+                                                <!--<span class="price">$45.00</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-actions">-->
+                                                <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="product-item product-item-opt-1">-->
+                                    <!--<div class="product-item-info">-->
+                                        <!--<div class="product-item-photo">-->
+                                            <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                      <!--src="images/media/index1/featured-electronics3.jpg"></a>-->
+                                        <!--</div>-->
+                                        <!--<div class="product-item-detail">-->
+                                            <!--<strong class="product-item-name"><a href="#">Samsung Ispiron-->
+                                                <!--20 </a></strong>-->
+                                            <!--<div class="product-item-price">-->
+                                                <!--<span class="price">$45.00</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-actions">-->
+                                                <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="item">-->
+                                <!--<div class="product-item product-item-opt-1">-->
+                                    <!--<div class="product-item-info">-->
+                                        <!--<div class="product-item-photo">-->
+                                            <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                      <!--src="images/media/index1/featured-electronics1.jpg"></a>-->
+                                        <!--</div>-->
+                                        <!--<div class="product-item-detail">-->
+                                            <!--<strong class="product-item-name"><a href="#">Asus Ispiron 20</a></strong>-->
+                                            <!--<div class="product-item-price">-->
+                                                <!--<span class="price">$45.00</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-actions">-->
+                                                <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="product-item product-item-opt-1">-->
+                                    <!--<div class="product-item-info">-->
+                                        <!--<div class="product-item-photo">-->
+                                            <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                      <!--src="images/media/index1/featured-electronics2.jpg"></a>-->
+                                        <!--</div>-->
+                                        <!--<div class="product-item-detail">-->
+                                            <!--<strong class="product-item-name"><a href="#">Electronics Ispiron-->
+                                                <!--20 </a></strong>-->
+                                            <!--<div class="product-item-price">-->
+                                                <!--<span class="price">$45.00</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-actions">-->
+                                                <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="product-item product-item-opt-1">-->
+                                    <!--<div class="product-item-info">-->
+                                        <!--<div class="product-item-photo">-->
+                                            <!--<a class="product-item-img" href="#"><img alt="product name"-->
+                                                                                      <!--src="images/media/index1/featured-electronics3.jpg"></a>-->
+                                        <!--</div>-->
+                                        <!--<div class="product-item-detail">-->
+                                            <!--<strong class="product-item-name"><a href="#">Samsung Ispiron-->
+                                                <!--20 </a></strong>-->
+                                            <!--<div class="product-item-price">-->
+                                                <!--<span class="price">$45.00</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="product-item-actions">-->
+                                                <!--<a class="btn btn-wishlist" href="#"><span>wishlist</span></a>-->
+                                                <!--<a class="btn btn-compare" href="#"><span>compare</span></a>-->
+                                                <!--<button type="button" class="btn btn-cart"><span>Add to Cart</span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
