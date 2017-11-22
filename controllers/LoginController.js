@@ -82,12 +82,13 @@
             vm.dataLoading = true;
             vm.user.image = $scope.userImage;
             console.log("user data ", vm.user);
-            if (vm.user.password == vm.user.passwordConfirm) {
+            if (vm.user.password === vm.user.passwordConfirm) {
                 UserService.signUp(vm.user)
                     .then(function (response) {
                         if (response.success) {
                             FlashService.Success('Registration successful', true);
-                            // $location.path('/login');
+                            // TODO replace with confirmation dialog
+                            $location.path('/login');
                         } else {
                             FlashService.Error(response.message);
                             vm.dataLoading = false;
