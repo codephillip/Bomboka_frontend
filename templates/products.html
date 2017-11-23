@@ -23,16 +23,38 @@
                                                                          id="search-icon-store"></i></button>
                     </form>
 
-                    <div id="tiles-div">
+                    <div class="tiles-div">
                         <div class="row">
                             <div class="col-md-4" ng-repeat="prod in prodctrl.data.results">
                                 <a ui-sref="product_detail({productObject: prod})">
                                     <div class="thumbnail" >
                                         <!--todo replace image url with a base url-->
-                                        <img ng-src="{{prod.image | formatImage}}" width="120" height="50">
+                                        <p>{{prod.image}}</p>
+                                        <img ng-src="{{prod.image}}" width="120" height="50">
                                         <div class="thumbnail-desc">
                                             <p class="thumbnail-paragraph">{{prod.name}}</p>
                                             <p class="thumbnail-paragraph">{{prod.price}}</p>
+                                            <p class="thumbnail-paragraph">5% OFF</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tiles-div">
+                        <h1>Discounts</h1>
+                        <div class="row">
+                            <div class="col-md-4" ng-repeat="prod in prodctrl.discount_products.results">
+                                <a ui-sref="product_detail({productObject: prod.product})">
+                                    <p>{{prod.product.image}}</p>
+                                    <div class="thumbnail" >
+                                        <!--todo replace image url with a base url-->
+                                        <img ng-src="{{prod.product.image | formatImage}}" width="120" height="50">
+                                        <div class="thumbnail-desc">
+                                            <p class="thumbnail-paragraph">{{prod.product.name}}</p>
+                                            <p class="thumbnail-paragraph">{{prod.product.price}}</p>
                                             <p class="thumbnail-paragraph">5% OFF</p>
                                         </div>
                                     </div>

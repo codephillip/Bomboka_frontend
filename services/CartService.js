@@ -8,10 +8,10 @@
     CartService.$inject = ['$http'];
     function CartService($http) {
         var service = {};
-        service.GetAll = GetAll;
+        service.getAll = getAll;
         return service;
 
-        function GetAll(userId) {
+        function getAll(userId) {
             return $http.get('http://127.0.0.1:9000/api/order/cartItems/' + userId);
         }
     }

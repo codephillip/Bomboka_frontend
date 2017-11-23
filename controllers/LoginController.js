@@ -103,7 +103,7 @@
         displayProducts();
         function displayProducts() {
             //todo extract shop_id and pass it to this method
-            ProductService.GetAll()
+            ProductService.getAll()
                 .then(function success(response) {
                     vm.data = response.data;
                 }, function failure(error) {

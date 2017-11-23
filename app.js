@@ -8,7 +8,6 @@
                 .setPrefix('bomboka');
         })
         .run(run)
-        .filter('formatImage', formatImage);
 
     function Router($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -94,19 +93,5 @@
                 $location.path('/login');
             }
         });
-    }
-
-    // formats the image url for proper image access from backend
-    function formatImage() {
-        return function(x) {
-            console.log("contains: ", x.includes('users'));
-            if(x.includes('users')) {
-                return x.replace('api/v1/users', 'photos');
-            } else {
-                return x.replace('api/v1', 'photos');
-            }
-            return x.replace('api/v1', 'photos');
-
-        };
     }
 })();

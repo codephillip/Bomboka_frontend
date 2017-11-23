@@ -110,7 +110,7 @@ div.card-footer.caption {
     text-align:center;
 }
 
-div#tiles-div {
+.tiles-div {
     margin-top:10px;
     padding:20px 10px;
     border-style:solid;
